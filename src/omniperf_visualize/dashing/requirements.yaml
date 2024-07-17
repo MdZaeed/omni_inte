@@ -1,0 +1,13 @@
+- pyyaml
+- numpy
+- h5py
+- psutil
+- matplotlib
+- scipy
+- pandas
+- plotly
+- dash
+- python=3.7
+- requests
+- plotly
+- plotly-orca

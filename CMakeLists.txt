@@ -287,6 +287,13 @@ install(
     COMPONENT main
     PATTERN src/omniperf_analyze/tests EXCLUDE
     PATTERN "__pycache__" EXCLUDE)
+# src/omniperf_visualize
+install(
+    DIRECTORY src/omniperf_visualize
+    DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/${PROJECT_NAME}
+    COMPONENT main
+    PATTERN src/omniperf_visualize/tests EXCLUDE
+    PATTERN "__pycache__" EXCLUDE)
 # src/utils
 install(
     DIRECTORY src/utils

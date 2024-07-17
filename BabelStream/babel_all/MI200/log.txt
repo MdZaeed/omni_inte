@@ -1,0 +1,864 @@
+Omniperf version: 2.0.1
+Profiler choice: rocprofv1
+Path: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200
+Target: MI200
+Command: ./hip-stream
+Kernel Selection: None
+Dispatch Selection: None
+Hardware Blocks: All
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Collecting Performance Counters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_IFETCH_LEVEL.txt
+   |-> [rocprof] RPL: on '240709_201309' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_IFETCH_LEVEL.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_201309_2868650'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_201309_2868650/input0_results_240709_201309'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_201309_2868650/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 6 metrics
+   |-> [rocprof] GRBM_COUNT, GRBM_GUI_ACTIVE, SQ_WAVES, SQ_IFETCH, SQ_IFETCH_LEVEL, SQ_ACCUM_PREV_HIRES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050143 s (=16060.083742 MBytes/sec)
+   |-> [rocprof] Read: 0.485315 s (=1659.348522 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8152.615    0.06585     0.09360     0.07108
+   |-> [rocprof] Mul         8158.186    0.06581     0.09667     0.07352
+   |-> [rocprof] Add         16997.030   0.04738     0.07509     0.05008
+   |-> [rocprof] Triad       17082.827   0.04714     0.07159     0.04946
+   |-> [rocprof] Dot         27982.080   0.01919     0.04585     0.02003
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_201309_2868650/input0_results_240709_201309
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/SQ_IFETCH_LEVEL.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_LDS.txt
+   |-> [rocprof] RPL: on '240709_201337' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_LDS.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_201337_2907535'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_201337_2907535/input0_results_240709_201337'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_201337_2907535/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 3 metrics
+   |-> [rocprof] SQ_INSTS_LDS, SQ_INST_LEVEL_LDS, SQ_ACCUM_PREV_HIRES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050803 s (=15851.553940 MBytes/sec)
+   |-> [rocprof] Read: 1.563874 s (=514.943398 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        2195.364    0.24455     0.55205     0.41029
+   |-> [rocprof] Mul         2201.986    0.24381     0.56268     0.42325
+   |-> [rocprof] Add         5036.194    0.15990     0.37759     0.25240
+   |-> [rocprof] Triad       5108.017    0.15766     0.38139     0.23202
+   |-> [rocprof] Dot         27925.720   0.01922     0.05843     0.02214
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_201337_2907535/input0_results_240709_201337
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/SQ_INST_LEVEL_LDS.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_SMEM.txt
+   |-> [rocprof] RPL: on '240709_201553' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_SMEM.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_201553_2945356'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_201553_2945356/input0_results_240709_201553'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_201553_2945356/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 3 metrics
+   |-> [rocprof] SQ_INSTS_SMEM, SQ_INST_LEVEL_SMEM, SQ_ACCUM_PREV_HIRES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050143 s (=16060.093991 MBytes/sec)
+   |-> [rocprof] Read: 1.541868 s (=522.292569 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        1942.403    0.27640     0.53065     0.41479
+   |-> [rocprof] Mul         2116.889    0.25361     0.58154     0.45395
+   |-> [rocprof] Add         4899.634    0.16436     0.39117     0.27604
+   |-> [rocprof] Triad       5046.148    0.15959     0.37577     0.25448
+   |-> [rocprof] Dot         27947.303   0.01921     0.03238     0.02149
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_201553_2945356/input0_results_240709_201553
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/SQ_INST_LEVEL_SMEM.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_VMEM.txt
+   |-> [rocprof] RPL: on '240709_201818' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_INST_LEVEL_VMEM.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_201818_2974243'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_201818_2974243/input0_results_240709_201818'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_201818_2974243/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 3 metrics
+   |-> [rocprof] SQ_INSTS_VMEM, SQ_INST_LEVEL_VMEM, SQ_ACCUM_PREV_HIRES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050628 s (=15906.340856 MBytes/sec)
+   |-> [rocprof] Read: 0.467894 s (=1721.128511 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8607.325    0.06237     0.09254     0.06830
+   |-> [rocprof] Mul         8561.249    0.06271     0.09326     0.06795
+   |-> [rocprof] Add         16900.044   0.04765     0.07690     0.05095
+   |-> [rocprof] Triad       17005.454   0.04736     0.07587     0.05082
+   |-> [rocprof] Dot         27975.066   0.01919     0.04392     0.02072
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_201818_2974243/input0_results_240709_201818
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/SQ_INST_LEVEL_VMEM.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_LEVEL_WAVES.txt
+   |-> [rocprof] RPL: on '240709_201845' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/SQ_LEVEL_WAVES.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_201845_2984171'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_201845_2984171/input0_results_240709_201845'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_201845_2984171/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 9 metrics
+   |-> [rocprof] GRBM_COUNT, GRBM_GUI_ACTIVE, CPC_ME1_BUSY_FOR_PACKET_DECODE, SQ_CYCLES, SQ_WAVES, SQ_WAVE_CYCLES, SQ_BUSY_CYCLES, SQ_LEVEL_WAVES, SQ_ACCUM_PREV_HIRES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049970 s (=16115.749752 MBytes/sec)
+   |-> [rocprof] Read: 1.895738 s (=424.798407 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        1789.201    0.30006     0.52191     0.46560
+   |-> [rocprof] Mul         2355.680    0.22790     0.58547     0.52746
+   |-> [rocprof] Add         4520.782    0.17813     0.42694     0.33148
+   |-> [rocprof] Triad       4937.234    0.16311     0.38353     0.31985
+   |-> [rocprof] Dot         26652.520   0.02014     0.02913     0.02217
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_201845_2984171/input0_results_240709_201845
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/SQ_LEVEL_WAVES.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_0.txt
+   |-> [rocprof] RPL: on '240709_202134' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_0.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202134_3025747'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202134_3025747/input0_results_240709_202134'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202134_3025747/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 28 metrics
+   |-> [rocprof] SQ_CYCLES, SQ_BUSY_CYCLES, SQ_WAVES, SQ_BUSY_CU_CYCLES, SQ_WAVE_CYCLES, SQ_INSTS_VALU_CVT, SQ_INSTS_VMEM_WR, SQ_INSTS_VMEM_RD, GRBM_COUNT, GRBM_GUI_ACTIVE, TCP_GATE_EN1_sum, TCP_GATE_EN2_sum, TCP_TD_TCP_STALL_CYCLES_sum, TCP_TCR_TCP_STALL_CYCLES_sum, TA_TA_BUSY_sum, TA_BUFFER_WAVEFRONTS_sum, TD_TD_BUSY_sum, TD_TC_STALL_sum, SPI_CSN_WINDOW_VALID, SPI_CSN_BUSY, CPC_CPC_STAT_BUSY, CPC_CPC_STAT_IDLE, CPF_CPF_STAT_BUSY, CPF_CPF_STAT_STALL, TCC_CYCLE_sum, TCC_BUSY_sum, TCC_PROBE_sum, TCC_PROBE_ALL_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049073 s (=16410.526545 MBytes/sec)
+   |-> [rocprof] Read: 1.727362 s (=466.205776 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        1564.846    0.34308     0.51601     0.46445
+   |-> [rocprof] Mul         1736.200    0.30922     0.59043     0.50107
+   |-> [rocprof] Add         4728.687    0.17030     0.37470     0.30648
+   |-> [rocprof] Triad       4656.007    0.17296     0.37199     0.29457
+   |-> [rocprof] Dot         26088.491   0.02058     0.02500     0.02350
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202134_3025747/input0_results_240709_202134
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_0.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_1.txt
+   |-> [rocprof] RPL: on '240709_202416' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_1.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202416_3066132'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202416_3066132/input0_results_240709_202416'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202416_3066132/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 27 metrics
+   |-> [rocprof] SQ_INSTS_VMEM, SQ_INSTS_SALU, SQ_INSTS_VSKIPPED, SQ_INSTS, SQ_INSTS_VALU, SQ_INSTS_VALU_ADD_F16, SQ_INSTS_VALU_MUL_F16, SQ_INSTS_VALU_FMA_F16, GRBM_SPI_BUSY, TCP_READ_TAGCONFLICT_STALL_CYCLES_sum, TCP_WRITE_TAGCONFLICT_STALL_CYCLES_sum, TCP_ATOMIC_TAGCONFLICT_STALL_CYCLES_sum, TCP_TA_TCP_STATE_READ_sum, TA_BUFFER_READ_WAVEFRONTS_sum, TA_BUFFER_WRITE_WAVEFRONTS_sum, TD_SPI_STALL_sum, TD_LOAD_WAVEFRONT_sum, SPI_CSN_NUM_THREADGROUPS, SPI_CSN_WAVE, CPC_CPC_TCIU_BUSY, CPC_CPC_TCIU_IDLE, CPF_CPF_TCIU_BUSY, CPF_CPF_TCIU_STALL, TCC_NC_REQ_sum, TCC_UC_REQ_sum, TCC_CC_REQ_sum, TCC_RW_REQ_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049516 s (=16263.563206 MBytes/sec)
+   |-> [rocprof] Read: 1.756992 s (=458.343756 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        1559.829    0.34419     0.55712     0.46199
+   |-> [rocprof] Mul         1706.984    0.31451     0.59213     0.49470
+   |-> [rocprof] Add         4552.736    0.17688     0.36915     0.29929
+   |-> [rocprof] Triad       4870.226    0.16535     0.36555     0.27656
+   |-> [rocprof] Dot         25958.341   0.02068     0.02981     0.02330
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202416_3066132/input0_results_240709_202416
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_1.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_10.txt
+   |-> [rocprof] RPL: on '240709_202654' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_10.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202654_3107872'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202654_3107872/input0_results_240709_202654'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202654_3107872/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 8 metrics
+   |-> [rocprof] SQC_TC_DATA_WRITE_REQ, SQC_TC_DATA_ATOMIC_REQ, SQC_TC_STALL, SQC_TC_REQ, SQC_DCACHE_REQ_READ_16, SQC_ICACHE_REQ, SQC_ICACHE_HITS, SQC_ICACHE_MISSES
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.048956 s (=16449.609686 MBytes/sec)
+   |-> [rocprof] Read: 0.466015 s (=1728.070022 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8125.338    0.06607     0.10420     0.07363
+   |-> [rocprof] Mul         8224.368    0.06528     0.11014     0.07651
+   |-> [rocprof] Add         17083.540   0.04714     0.09100     0.05046
+   |-> [rocprof] Triad       17282.169   0.04660     0.15461     0.05594
+   |-> [rocprof] Dot         27963.418   0.01920     0.04300     0.01971
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202654_3107872/input0_results_240709_202654
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_10.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_11.txt
+   |-> [rocprof] RPL: on '240709_202723' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_11.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202723_3115144'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202723_3115144/input0_results_240709_202723'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202723_3115144/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 8 metrics
+   |-> [rocprof] SQC_ICACHE_MISSES_DUPLICATE, SQC_DCACHE_INPUT_VALID_READYB, SQC_DCACHE_ATOMIC, SQC_DCACHE_REQ_READ_8, SQC_DCACHE_REQ, SQC_DCACHE_HITS, SQC_DCACHE_MISSES, SQC_DCACHE_MISSES_DUPLICATE
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049830 s (=16160.980962 MBytes/sec)
+   |-> [rocprof] Read: 0.516335 s (=1559.657195 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8245.090    0.06511     0.09801     0.07264
+   |-> [rocprof] Mul         8307.027    0.06463     0.10259     0.07772
+   |-> [rocprof] Add         17254.122   0.04667     0.07601     0.05013
+   |-> [rocprof] Triad       17151.300   0.04695     0.07240     0.04853
+   |-> [rocprof] Dot         27945.815   0.01921     0.04661     0.01991
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202723_3115144/input0_results_240709_202723
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_11.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_12.txt
+   |-> [rocprof] RPL: on '240709_202751' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_12.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202751_3119309'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202751_3119309/input0_results_240709_202751'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202751_3119309/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 3 metrics
+   |-> [rocprof] SQC_DCACHE_REQ_READ_1, SQC_DCACHE_REQ_READ_2, SQC_DCACHE_REQ_READ_4
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050885 s (=15826.096608 MBytes/sec)
+   |-> [rocprof] Read: 0.456423 s (=1764.387204 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8345.981    0.06433     0.09478     0.07213
+   |-> [rocprof] Mul         8217.678    0.06533     0.10895     0.07882
+   |-> [rocprof] Add         17360.973   0.04639     0.08333     0.05164
+   |-> [rocprof] Triad       17093.514   0.04711     0.07405     0.05113
+   |-> [rocprof] Dot         28001.071   0.01917     0.04229     0.01969
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202751_3119309/input0_results_240709_202751
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_12.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_13.txt
+   |-> [rocprof] RPL: on '240709_202819' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_13.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202819_3123200'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202819_3123200/input0_results_240709_202819'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202819_3123200/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 128 metrics
+   |-> [rocprof] TCC_ATOMIC[0], TCC_CYCLE[0], TCC_EA_ATOMIC[0], TCC_EA_ATOMIC_LEVEL[0], TCC_ATOMIC[1], TCC_CYCLE[1], TCC_EA_ATOMIC[1], TCC_EA_ATOMIC_LEVEL[1], TCC_ATOMIC[2], TCC_CYCLE[2], TCC_EA_ATOMIC[2], TCC_EA_ATOMIC_LEVEL[2], TCC_ATOMIC[3], TCC_CYCLE[3], TCC_EA_ATOMIC[3], TCC_EA_ATOMIC_LEVEL[3], TCC_ATOMIC[4], TCC_CYCLE[4], TCC_EA_ATOMIC[4], TCC_EA_ATOMIC_LEVEL[4], TCC_ATOMIC[5], TCC_CYCLE[5], TCC_EA_ATOMIC[5], TCC_EA_ATOMIC_LEVEL[5], TCC_ATOMIC[6], TCC_CYCLE[6], TCC_EA_ATOMIC[6], TCC_EA_ATOMIC_LEVEL[6], TCC_ATOMIC[7], TCC_CYCLE[7], TCC_EA_ATOMIC[7], TCC_EA_ATOMIC_LEVEL[7], TCC_ATOMIC[8], TCC_CYCLE[8], TCC_EA_ATOMIC[8], TCC_EA_ATOMIC_LEVEL[8], TCC_ATOMIC[9], TCC_CYCLE[9], TCC_EA_ATOMIC[9], TCC_EA_ATOMIC_LEVEL[9], TCC_ATOMIC[10], TCC_CYCLE[10], TCC_EA_ATOMIC[10], TCC_EA_ATOMIC_LEVEL[10], TCC_ATOMIC[11], TCC_CYCLE[11], TCC_EA_ATOMIC[11], TCC_EA_ATOMIC_LEVEL[11], TCC_ATOMIC[12], TCC_CYCLE[12], TCC_EA_ATOMIC[12], TCC_EA_ATOMIC_LEVEL[12], TCC_ATOMIC[13], TCC_CYCLE[13], TCC_EA_ATOMIC[13], TCC_EA_ATOMIC_LEVEL[13], TCC_ATOMIC[14], TCC_CYCLE[14], TCC_EA_ATOMIC[14], TCC_EA_ATOMIC_LEVEL[14], TCC_ATOMIC[15], TCC_CYCLE[15], TCC_EA_ATOMIC[15], TCC_EA_ATOMIC_LEVEL[15], TCC_ATOMIC[16], TCC_CYCLE[16], TCC_EA_ATOMIC[16], TCC_EA_ATOMIC_LEVEL[16], TCC_ATOMIC[17], TCC_CYCLE[17], TCC_EA_ATOMIC[17], TCC_EA_ATOMIC_LEVEL[17], TCC_ATOMIC[18], TCC_CYCLE[18], TCC_EA_ATOMIC[18], TCC_EA_ATOMIC_LEVEL[18], TCC_ATOMIC[19], TCC_CYCLE[19], TCC_EA_ATOMIC[19], TCC_EA_ATOMIC_LEVEL[19], TCC_ATOMIC[20], TCC_CYCLE[20], TCC_EA_ATOMIC[20], TCC_EA_ATOMIC_LEVEL[20], TCC_ATOMIC[21], TCC_CYCLE[21], TCC_EA_ATOMIC[21], TCC_EA_ATOMIC_LEVEL[21], TCC_ATOMIC[22], TCC_CYCLE[22], TCC_EA_ATOMIC[22], TCC_EA_ATOMIC_LEVEL[22], TCC_ATOMIC[23], TCC_CYCLE[23], TCC_EA_ATOMIC[23], TCC_EA_ATOMIC_LEVEL[23], TCC_ATOMIC[24], TCC_CYCLE[24], TCC_EA_ATOMIC[24], TCC_EA_ATOMIC_LEVEL[24], TCC_ATOMIC[25], TCC_CYCLE[25], TCC_EA_ATOMIC[25], TCC_EA_ATOMIC_LEVEL[25], TCC_ATOMIC[26], TCC_CYCLE[26], TCC_EA_ATOMIC[26], TCC_EA_ATOMIC_LEVEL[26], TCC_ATOMIC[27], TCC_CYCLE[27], TCC_EA_ATOMIC[27], TCC_EA_ATOMIC_LEVEL[27], TCC_ATOMIC[28], TCC_CYCLE[28], TCC_EA_ATOMIC[28], TCC_EA_ATOMIC_LEVEL[28], TCC_ATOMIC[29], TCC_CYCLE[29], TCC_EA_ATOMIC[29], TCC_EA_ATOMIC_LEVEL[29], TCC_ATOMIC[30], TCC_CYCLE[30], TCC_EA_ATOMIC[30], TCC_EA_ATOMIC_LEVEL[30], TCC_ATOMIC[31], TCC_CYCLE[31], TCC_EA_ATOMIC[31], TCC_EA_ATOMIC_LEVEL[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049302 s (=16334.175315 MBytes/sec)
+   |-> [rocprof] Read: 0.461270 s (=1745.846407 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8111.994    0.06618     0.50556     0.09489
+   |-> [rocprof] Mul         8182.708    0.06561     0.54562     0.10324
+   |-> [rocprof] Add         16854.359   0.04778     0.37015     0.06922
+   |-> [rocprof] Triad       17015.757   0.04733     0.36107     0.06995
+   |-> [rocprof] Dot         27561.141   0.01948     0.04396     0.02013
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202819_3123200/input0_results_240709_202819
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_13.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_14.txt
+   |-> [rocprof] RPL: on '240709_202856' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_14.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202856_3133040'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202856_3133040/input0_results_240709_202856'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202856_3133040/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 128 metrics
+   |-> [rocprof] TCC_EA_RDREQ[0], TCC_EA_RDREQ_32B[0], TCC_EA_RDREQ_DRAM_CREDIT_STALL[0], TCC_EA_RDREQ_GMI_CREDIT_STALL[0], TCC_EA_RDREQ[1], TCC_EA_RDREQ_32B[1], TCC_EA_RDREQ_DRAM_CREDIT_STALL[1], TCC_EA_RDREQ_GMI_CREDIT_STALL[1], TCC_EA_RDREQ[2], TCC_EA_RDREQ_32B[2], TCC_EA_RDREQ_DRAM_CREDIT_STALL[2], TCC_EA_RDREQ_GMI_CREDIT_STALL[2], TCC_EA_RDREQ[3], TCC_EA_RDREQ_32B[3], TCC_EA_RDREQ_DRAM_CREDIT_STALL[3], TCC_EA_RDREQ_GMI_CREDIT_STALL[3], TCC_EA_RDREQ[4], TCC_EA_RDREQ_32B[4], TCC_EA_RDREQ_DRAM_CREDIT_STALL[4], TCC_EA_RDREQ_GMI_CREDIT_STALL[4], TCC_EA_RDREQ[5], TCC_EA_RDREQ_32B[5], TCC_EA_RDREQ_DRAM_CREDIT_STALL[5], TCC_EA_RDREQ_GMI_CREDIT_STALL[5], TCC_EA_RDREQ[6], TCC_EA_RDREQ_32B[6], TCC_EA_RDREQ_DRAM_CREDIT_STALL[6], TCC_EA_RDREQ_GMI_CREDIT_STALL[6], TCC_EA_RDREQ[7], TCC_EA_RDREQ_32B[7], TCC_EA_RDREQ_DRAM_CREDIT_STALL[7], TCC_EA_RDREQ_GMI_CREDIT_STALL[7], TCC_EA_RDREQ[8], TCC_EA_RDREQ_32B[8], TCC_EA_RDREQ_DRAM_CREDIT_STALL[8], TCC_EA_RDREQ_GMI_CREDIT_STALL[8], TCC_EA_RDREQ[9], TCC_EA_RDREQ_32B[9], TCC_EA_RDREQ_DRAM_CREDIT_STALL[9], TCC_EA_RDREQ_GMI_CREDIT_STALL[9], TCC_EA_RDREQ[10], TCC_EA_RDREQ_32B[10], TCC_EA_RDREQ_DRAM_CREDIT_STALL[10], TCC_EA_RDREQ_GMI_CREDIT_STALL[10], TCC_EA_RDREQ[11], TCC_EA_RDREQ_32B[11], TCC_EA_RDREQ_DRAM_CREDIT_STALL[11], TCC_EA_RDREQ_GMI_CREDIT_STALL[11], TCC_EA_RDREQ[12], TCC_EA_RDREQ_32B[12], TCC_EA_RDREQ_DRAM_CREDIT_STALL[12], TCC_EA_RDREQ_GMI_CREDIT_STALL[12], TCC_EA_RDREQ[13], TCC_EA_RDREQ_32B[13], TCC_EA_RDREQ_DRAM_CREDIT_STALL[13], TCC_EA_RDREQ_GMI_CREDIT_STALL[13], TCC_EA_RDREQ[14], TCC_EA_RDREQ_32B[14], TCC_EA_RDREQ_DRAM_CREDIT_STALL[14], TCC_EA_RDREQ_GMI_CREDIT_STALL[14], TCC_EA_RDREQ[15], TCC_EA_RDREQ_32B[15], TCC_EA_RDREQ_DRAM_CREDIT_STALL[15], TCC_EA_RDREQ_GMI_CREDIT_STALL[15], TCC_EA_RDREQ[16], TCC_EA_RDREQ_32B[16], TCC_EA_RDREQ_DRAM_CREDIT_STALL[16], TCC_EA_RDREQ_GMI_CREDIT_STALL[16], TCC_EA_RDREQ[17], TCC_EA_RDREQ_32B[17], TCC_EA_RDREQ_DRAM_CREDIT_STALL[17], TCC_EA_RDREQ_GMI_CREDIT_STALL[17], TCC_EA_RDREQ[18], TCC_EA_RDREQ_32B[18], TCC_EA_RDREQ_DRAM_CREDIT_STALL[18], TCC_EA_RDREQ_GMI_CREDIT_STALL[18], TCC_EA_RDREQ[19], TCC_EA_RDREQ_32B[19], TCC_EA_RDREQ_DRAM_CREDIT_STALL[19], TCC_EA_RDREQ_GMI_CREDIT_STALL[19], TCC_EA_RDREQ[20], TCC_EA_RDREQ_32B[20], TCC_EA_RDREQ_DRAM_CREDIT_STALL[20], TCC_EA_RDREQ_GMI_CREDIT_STALL[20], TCC_EA_RDREQ[21], TCC_EA_RDREQ_32B[21], TCC_EA_RDREQ_DRAM_CREDIT_STALL[21], TCC_EA_RDREQ_GMI_CREDIT_STALL[21], TCC_EA_RDREQ[22], TCC_EA_RDREQ_32B[22], TCC_EA_RDREQ_DRAM_CREDIT_STALL[22], TCC_EA_RDREQ_GMI_CREDIT_STALL[22], TCC_EA_RDREQ[23], TCC_EA_RDREQ_32B[23], TCC_EA_RDREQ_DRAM_CREDIT_STALL[23], TCC_EA_RDREQ_GMI_CREDIT_STALL[23], TCC_EA_RDREQ[24], TCC_EA_RDREQ_32B[24], TCC_EA_RDREQ_DRAM_CREDIT_STALL[24], TCC_EA_RDREQ_GMI_CREDIT_STALL[24], TCC_EA_RDREQ[25], TCC_EA_RDREQ_32B[25], TCC_EA_RDREQ_DRAM_CREDIT_STALL[25], TCC_EA_RDREQ_GMI_CREDIT_STALL[25], TCC_EA_RDREQ[26], TCC_EA_RDREQ_32B[26], TCC_EA_RDREQ_DRAM_CREDIT_STALL[26], TCC_EA_RDREQ_GMI_CREDIT_STALL[26], TCC_EA_RDREQ[27], TCC_EA_RDREQ_32B[27], TCC_EA_RDREQ_DRAM_CREDIT_STALL[27], TCC_EA_RDREQ_GMI_CREDIT_STALL[27], TCC_EA_RDREQ[28], TCC_EA_RDREQ_32B[28], TCC_EA_RDREQ_DRAM_CREDIT_STALL[28], TCC_EA_RDREQ_GMI_CREDIT_STALL[28], TCC_EA_RDREQ[29], TCC_EA_RDREQ_32B[29], TCC_EA_RDREQ_DRAM_CREDIT_STALL[29], TCC_EA_RDREQ_GMI_CREDIT_STALL[29], TCC_EA_RDREQ[30], TCC_EA_RDREQ_32B[30], TCC_EA_RDREQ_DRAM_CREDIT_STALL[30], TCC_EA_RDREQ_GMI_CREDIT_STALL[30], TCC_EA_RDREQ[31], TCC_EA_RDREQ_32B[31], TCC_EA_RDREQ_DRAM_CREDIT_STALL[31], TCC_EA_RDREQ_GMI_CREDIT_STALL[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049570 s (=16245.789816 MBytes/sec)
+   |-> [rocprof] Read: 0.460591 s (=1748.420236 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8102.275    0.06626     0.12194     0.07178
+   |-> [rocprof] Mul         8133.893    0.06600     0.09626     0.07301
+   |-> [rocprof] Add         17007.794   0.04735     0.07173     0.05013
+   |-> [rocprof] Triad       17114.061   0.04706     0.08006     0.05019
+   |-> [rocprof] Dot         27730.527   0.01936     0.04507     0.02029
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202856_3133040/input0_results_240709_202856
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_14.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_15.txt
+   |-> [rocprof] RPL: on '240709_202924' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_15.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202924_3142542'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202924_3142542/input0_results_240709_202924'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202924_3142542/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 128 metrics
+   |-> [rocprof] TCC_EA_RDREQ_IO_CREDIT_STALL[0], TCC_EA_RDREQ_LEVEL[0], TCC_EA_WRREQ[0], TCC_EA_WRREQ_64B[0], TCC_EA_RDREQ_IO_CREDIT_STALL[1], TCC_EA_RDREQ_LEVEL[1], TCC_EA_WRREQ[1], TCC_EA_WRREQ_64B[1], TCC_EA_RDREQ_IO_CREDIT_STALL[2], TCC_EA_RDREQ_LEVEL[2], TCC_EA_WRREQ[2], TCC_EA_WRREQ_64B[2], TCC_EA_RDREQ_IO_CREDIT_STALL[3], TCC_EA_RDREQ_LEVEL[3], TCC_EA_WRREQ[3], TCC_EA_WRREQ_64B[3], TCC_EA_RDREQ_IO_CREDIT_STALL[4], TCC_EA_RDREQ_LEVEL[4], TCC_EA_WRREQ[4], TCC_EA_WRREQ_64B[4], TCC_EA_RDREQ_IO_CREDIT_STALL[5], TCC_EA_RDREQ_LEVEL[5], TCC_EA_WRREQ[5], TCC_EA_WRREQ_64B[5], TCC_EA_RDREQ_IO_CREDIT_STALL[6], TCC_EA_RDREQ_LEVEL[6], TCC_EA_WRREQ[6], TCC_EA_WRREQ_64B[6], TCC_EA_RDREQ_IO_CREDIT_STALL[7], TCC_EA_RDREQ_LEVEL[7], TCC_EA_WRREQ[7], TCC_EA_WRREQ_64B[7], TCC_EA_RDREQ_IO_CREDIT_STALL[8], TCC_EA_RDREQ_LEVEL[8], TCC_EA_WRREQ[8], TCC_EA_WRREQ_64B[8], TCC_EA_RDREQ_IO_CREDIT_STALL[9], TCC_EA_RDREQ_LEVEL[9], TCC_EA_WRREQ[9], TCC_EA_WRREQ_64B[9], TCC_EA_RDREQ_IO_CREDIT_STALL[10], TCC_EA_RDREQ_LEVEL[10], TCC_EA_WRREQ[10], TCC_EA_WRREQ_64B[10], TCC_EA_RDREQ_IO_CREDIT_STALL[11], TCC_EA_RDREQ_LEVEL[11], TCC_EA_WRREQ[11], TCC_EA_WRREQ_64B[11], TCC_EA_RDREQ_IO_CREDIT_STALL[12], TCC_EA_RDREQ_LEVEL[12], TCC_EA_WRREQ[12], TCC_EA_WRREQ_64B[12], TCC_EA_RDREQ_IO_CREDIT_STALL[13], TCC_EA_RDREQ_LEVEL[13], TCC_EA_WRREQ[13], TCC_EA_WRREQ_64B[13], TCC_EA_RDREQ_IO_CREDIT_STALL[14], TCC_EA_RDREQ_LEVEL[14], TCC_EA_WRREQ[14], TCC_EA_WRREQ_64B[14], TCC_EA_RDREQ_IO_CREDIT_STALL[15], TCC_EA_RDREQ_LEVEL[15], TCC_EA_WRREQ[15], TCC_EA_WRREQ_64B[15], TCC_EA_RDREQ_IO_CREDIT_STALL[16], TCC_EA_RDREQ_LEVEL[16], TCC_EA_WRREQ[16], TCC_EA_WRREQ_64B[16], TCC_EA_RDREQ_IO_CREDIT_STALL[17], TCC_EA_RDREQ_LEVEL[17], TCC_EA_WRREQ[17], TCC_EA_WRREQ_64B[17], TCC_EA_RDREQ_IO_CREDIT_STALL[18], TCC_EA_RDREQ_LEVEL[18], TCC_EA_WRREQ[18], TCC_EA_WRREQ_64B[18], TCC_EA_RDREQ_IO_CREDIT_STALL[19], TCC_EA_RDREQ_LEVEL[19], TCC_EA_WRREQ[19], TCC_EA_WRREQ_64B[19], TCC_EA_RDREQ_IO_CREDIT_STALL[20], TCC_EA_RDREQ_LEVEL[20], TCC_EA_WRREQ[20], TCC_EA_WRREQ_64B[20], TCC_EA_RDREQ_IO_CREDIT_STALL[21], TCC_EA_RDREQ_LEVEL[21], TCC_EA_WRREQ[21], TCC_EA_WRREQ_64B[21], TCC_EA_RDREQ_IO_CREDIT_STALL[22], TCC_EA_RDREQ_LEVEL[22], TCC_EA_WRREQ[22], TCC_EA_WRREQ_64B[22], TCC_EA_RDREQ_IO_CREDIT_STALL[23], TCC_EA_RDREQ_LEVEL[23], TCC_EA_WRREQ[23], TCC_EA_WRREQ_64B[23], TCC_EA_RDREQ_IO_CREDIT_STALL[24], TCC_EA_RDREQ_LEVEL[24], TCC_EA_WRREQ[24], TCC_EA_WRREQ_64B[24], TCC_EA_RDREQ_IO_CREDIT_STALL[25], TCC_EA_RDREQ_LEVEL[25], TCC_EA_WRREQ[25], TCC_EA_WRREQ_64B[25], TCC_EA_RDREQ_IO_CREDIT_STALL[26], TCC_EA_RDREQ_LEVEL[26], TCC_EA_WRREQ[26], TCC_EA_WRREQ_64B[26], TCC_EA_RDREQ_IO_CREDIT_STALL[27], TCC_EA_RDREQ_LEVEL[27], TCC_EA_WRREQ[27], TCC_EA_WRREQ_64B[27], TCC_EA_RDREQ_IO_CREDIT_STALL[28], TCC_EA_RDREQ_LEVEL[28], TCC_EA_WRREQ[28], TCC_EA_WRREQ_64B[28], TCC_EA_RDREQ_IO_CREDIT_STALL[29], TCC_EA_RDREQ_LEVEL[29], TCC_EA_WRREQ[29], TCC_EA_WRREQ_64B[29], TCC_EA_RDREQ_IO_CREDIT_STALL[30], TCC_EA_RDREQ_LEVEL[30], TCC_EA_WRREQ[30], TCC_EA_WRREQ_64B[30], TCC_EA_RDREQ_IO_CREDIT_STALL[31], TCC_EA_RDREQ_LEVEL[31], TCC_EA_WRREQ[31], TCC_EA_WRREQ_64B[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049825 s (=16162.679931 MBytes/sec)
+   |-> [rocprof] Read: 0.472083 s (=1705.857375 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8095.780    0.06631     0.10608     0.07153
+   |-> [rocprof] Mul         8226.203    0.06526     0.35251     0.08376
+   |-> [rocprof] Add         17025.943   0.04730     0.07178     0.05109
+   |-> [rocprof] Triad       17025.403   0.04730     0.23809     0.05789
+   |-> [rocprof] Dot         27723.804   0.01936     0.04226     0.01992
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202924_3142542/input0_results_240709_202924
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_15.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_16.txt
+   |-> [rocprof] RPL: on '240709_202954' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_16.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_202954_3151897'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_202954_3151897/input0_results_240709_202954'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_202954_3151897/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 128 metrics
+   |-> [rocprof] TCC_EA_WRREQ_DRAM_CREDIT_STALL[0], TCC_EA_WRREQ_GMI_CREDIT_STALL[0], TCC_EA_WRREQ_IO_CREDIT_STALL[0], TCC_EA_WRREQ_LEVEL[0], TCC_EA_WRREQ_DRAM_CREDIT_STALL[1], TCC_EA_WRREQ_GMI_CREDIT_STALL[1], TCC_EA_WRREQ_IO_CREDIT_STALL[1], TCC_EA_WRREQ_LEVEL[1], TCC_EA_WRREQ_DRAM_CREDIT_STALL[2], TCC_EA_WRREQ_GMI_CREDIT_STALL[2], TCC_EA_WRREQ_IO_CREDIT_STALL[2], TCC_EA_WRREQ_LEVEL[2], TCC_EA_WRREQ_DRAM_CREDIT_STALL[3], TCC_EA_WRREQ_GMI_CREDIT_STALL[3], TCC_EA_WRREQ_IO_CREDIT_STALL[3], TCC_EA_WRREQ_LEVEL[3], TCC_EA_WRREQ_DRAM_CREDIT_STALL[4], TCC_EA_WRREQ_GMI_CREDIT_STALL[4], TCC_EA_WRREQ_IO_CREDIT_STALL[4], TCC_EA_WRREQ_LEVEL[4], TCC_EA_WRREQ_DRAM_CREDIT_STALL[5], TCC_EA_WRREQ_GMI_CREDIT_STALL[5], TCC_EA_WRREQ_IO_CREDIT_STALL[5], TCC_EA_WRREQ_LEVEL[5], TCC_EA_WRREQ_DRAM_CREDIT_STALL[6], TCC_EA_WRREQ_GMI_CREDIT_STALL[6], TCC_EA_WRREQ_IO_CREDIT_STALL[6], TCC_EA_WRREQ_LEVEL[6], TCC_EA_WRREQ_DRAM_CREDIT_STALL[7], TCC_EA_WRREQ_GMI_CREDIT_STALL[7], TCC_EA_WRREQ_IO_CREDIT_STALL[7], TCC_EA_WRREQ_LEVEL[7], TCC_EA_WRREQ_DRAM_CREDIT_STALL[8], TCC_EA_WRREQ_GMI_CREDIT_STALL[8], TCC_EA_WRREQ_IO_CREDIT_STALL[8], TCC_EA_WRREQ_LEVEL[8], TCC_EA_WRREQ_DRAM_CREDIT_STALL[9], TCC_EA_WRREQ_GMI_CREDIT_STALL[9], TCC_EA_WRREQ_IO_CREDIT_STALL[9], TCC_EA_WRREQ_LEVEL[9], TCC_EA_WRREQ_DRAM_CREDIT_STALL[10], TCC_EA_WRREQ_GMI_CREDIT_STALL[10], TCC_EA_WRREQ_IO_CREDIT_STALL[10], TCC_EA_WRREQ_LEVEL[10], TCC_EA_WRREQ_DRAM_CREDIT_STALL[11], TCC_EA_WRREQ_GMI_CREDIT_STALL[11], TCC_EA_WRREQ_IO_CREDIT_STALL[11], TCC_EA_WRREQ_LEVEL[11], TCC_EA_WRREQ_DRAM_CREDIT_STALL[12], TCC_EA_WRREQ_GMI_CREDIT_STALL[12], TCC_EA_WRREQ_IO_CREDIT_STALL[12], TCC_EA_WRREQ_LEVEL[12], TCC_EA_WRREQ_DRAM_CREDIT_STALL[13], TCC_EA_WRREQ_GMI_CREDIT_STALL[13], TCC_EA_WRREQ_IO_CREDIT_STALL[13], TCC_EA_WRREQ_LEVEL[13], TCC_EA_WRREQ_DRAM_CREDIT_STALL[14], TCC_EA_WRREQ_GMI_CREDIT_STALL[14], TCC_EA_WRREQ_IO_CREDIT_STALL[14], TCC_EA_WRREQ_LEVEL[14], TCC_EA_WRREQ_DRAM_CREDIT_STALL[15], TCC_EA_WRREQ_GMI_CREDIT_STALL[15], TCC_EA_WRREQ_IO_CREDIT_STALL[15], TCC_EA_WRREQ_LEVEL[15], TCC_EA_WRREQ_DRAM_CREDIT_STALL[16], TCC_EA_WRREQ_GMI_CREDIT_STALL[16], TCC_EA_WRREQ_IO_CREDIT_STALL[16], TCC_EA_WRREQ_LEVEL[16], TCC_EA_WRREQ_DRAM_CREDIT_STALL[17], TCC_EA_WRREQ_GMI_CREDIT_STALL[17], TCC_EA_WRREQ_IO_CREDIT_STALL[17], TCC_EA_WRREQ_LEVEL[17], TCC_EA_WRREQ_DRAM_CREDIT_STALL[18], TCC_EA_WRREQ_GMI_CREDIT_STALL[18], TCC_EA_WRREQ_IO_CREDIT_STALL[18], TCC_EA_WRREQ_LEVEL[18], TCC_EA_WRREQ_DRAM_CREDIT_STALL[19], TCC_EA_WRREQ_GMI_CREDIT_STALL[19], TCC_EA_WRREQ_IO_CREDIT_STALL[19], TCC_EA_WRREQ_LEVEL[19], TCC_EA_WRREQ_DRAM_CREDIT_STALL[20], TCC_EA_WRREQ_GMI_CREDIT_STALL[20], TCC_EA_WRREQ_IO_CREDIT_STALL[20], TCC_EA_WRREQ_LEVEL[20], TCC_EA_WRREQ_DRAM_CREDIT_STALL[21], TCC_EA_WRREQ_GMI_CREDIT_STALL[21], TCC_EA_WRREQ_IO_CREDIT_STALL[21], TCC_EA_WRREQ_LEVEL[21], TCC_EA_WRREQ_DRAM_CREDIT_STALL[22], TCC_EA_WRREQ_GMI_CREDIT_STALL[22], TCC_EA_WRREQ_IO_CREDIT_STALL[22], TCC_EA_WRREQ_LEVEL[22], TCC_EA_WRREQ_DRAM_CREDIT_STALL[23], TCC_EA_WRREQ_GMI_CREDIT_STALL[23], TCC_EA_WRREQ_IO_CREDIT_STALL[23], TCC_EA_WRREQ_LEVEL[23], TCC_EA_WRREQ_DRAM_CREDIT_STALL[24], TCC_EA_WRREQ_GMI_CREDIT_STALL[24], TCC_EA_WRREQ_IO_CREDIT_STALL[24], TCC_EA_WRREQ_LEVEL[24], TCC_EA_WRREQ_DRAM_CREDIT_STALL[25], TCC_EA_WRREQ_GMI_CREDIT_STALL[25], TCC_EA_WRREQ_IO_CREDIT_STALL[25], TCC_EA_WRREQ_LEVEL[25], TCC_EA_WRREQ_DRAM_CREDIT_STALL[26], TCC_EA_WRREQ_GMI_CREDIT_STALL[26], TCC_EA_WRREQ_IO_CREDIT_STALL[26], TCC_EA_WRREQ_LEVEL[26], TCC_EA_WRREQ_DRAM_CREDIT_STALL[27], TCC_EA_WRREQ_GMI_CREDIT_STALL[27], TCC_EA_WRREQ_IO_CREDIT_STALL[27], TCC_EA_WRREQ_LEVEL[27], TCC_EA_WRREQ_DRAM_CREDIT_STALL[28], TCC_EA_WRREQ_GMI_CREDIT_STALL[28], TCC_EA_WRREQ_IO_CREDIT_STALL[28], TCC_EA_WRREQ_LEVEL[28], TCC_EA_WRREQ_DRAM_CREDIT_STALL[29], TCC_EA_WRREQ_GMI_CREDIT_STALL[29], TCC_EA_WRREQ_IO_CREDIT_STALL[29], TCC_EA_WRREQ_LEVEL[29], TCC_EA_WRREQ_DRAM_CREDIT_STALL[30], TCC_EA_WRREQ_GMI_CREDIT_STALL[30], TCC_EA_WRREQ_IO_CREDIT_STALL[30], TCC_EA_WRREQ_LEVEL[30], TCC_EA_WRREQ_DRAM_CREDIT_STALL[31], TCC_EA_WRREQ_GMI_CREDIT_STALL[31], TCC_EA_WRREQ_IO_CREDIT_STALL[31], TCC_EA_WRREQ_LEVEL[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.055056 s (=14627.142200 MBytes/sec)
+   |-> [rocprof] Read: 1.794475 s (=448.769971 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        1605.185    0.33446     0.52184     0.46760
+   |-> [rocprof] Mul         1693.457    0.31703     0.57968     0.51832
+   |-> [rocprof] Add         4566.461    0.17635     0.37593     0.32198
+   |-> [rocprof] Triad       4587.428    0.17555     0.37143     0.31361
+   |-> [rocprof] Dot         27350.324   0.01963     0.02381     0.02248
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_202954_3151897/input0_results_240709_202954
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_16.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_17.txt
+   |-> [rocprof] RPL: on '240709_203241' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_17.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203241_3168988'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203241_3168988/input0_results_240709_203241'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203241_3168988/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 128 metrics
+   |-> [rocprof] TCC_HIT[0], TCC_MISS[0], TCC_READ[0], TCC_REQ[0], TCC_HIT[1], TCC_MISS[1], TCC_READ[1], TCC_REQ[1], TCC_HIT[2], TCC_MISS[2], TCC_READ[2], TCC_REQ[2], TCC_HIT[3], TCC_MISS[3], TCC_READ[3], TCC_REQ[3], TCC_HIT[4], TCC_MISS[4], TCC_READ[4], TCC_REQ[4], TCC_HIT[5], TCC_MISS[5], TCC_READ[5], TCC_REQ[5], TCC_HIT[6], TCC_MISS[6], TCC_READ[6], TCC_REQ[6], TCC_HIT[7], TCC_MISS[7], TCC_READ[7], TCC_REQ[7], TCC_HIT[8], TCC_MISS[8], TCC_READ[8], TCC_REQ[8], TCC_HIT[9], TCC_MISS[9], TCC_READ[9], TCC_REQ[9], TCC_HIT[10], TCC_MISS[10], TCC_READ[10], TCC_REQ[10], TCC_HIT[11], TCC_MISS[11], TCC_READ[11], TCC_REQ[11], TCC_HIT[12], TCC_MISS[12], TCC_READ[12], TCC_REQ[12], TCC_HIT[13], TCC_MISS[13], TCC_READ[13], TCC_REQ[13], TCC_HIT[14], TCC_MISS[14], TCC_READ[14], TCC_REQ[14], TCC_HIT[15], TCC_MISS[15], TCC_READ[15], TCC_REQ[15], TCC_HIT[16], TCC_MISS[16], TCC_READ[16], TCC_REQ[16], TCC_HIT[17], TCC_MISS[17], TCC_READ[17], TCC_REQ[17], TCC_HIT[18], TCC_MISS[18], TCC_READ[18], TCC_REQ[18], TCC_HIT[19], TCC_MISS[19], TCC_READ[19], TCC_REQ[19], TCC_HIT[20], TCC_MISS[20], TCC_READ[20], TCC_REQ[20], TCC_HIT[21], TCC_MISS[21], TCC_READ[21], TCC_REQ[21], TCC_HIT[22], TCC_MISS[22], TCC_READ[22], TCC_REQ[22], TCC_HIT[23], TCC_MISS[23], TCC_READ[23], TCC_REQ[23], TCC_HIT[24], TCC_MISS[24], TCC_READ[24], TCC_REQ[24], TCC_HIT[25], TCC_MISS[25], TCC_READ[25], TCC_REQ[25], TCC_HIT[26], TCC_MISS[26], TCC_READ[26], TCC_REQ[26], TCC_HIT[27], TCC_MISS[27], TCC_READ[27], TCC_REQ[27], TCC_HIT[28], TCC_MISS[28], TCC_READ[28], TCC_REQ[28], TCC_HIT[29], TCC_MISS[29], TCC_READ[29], TCC_REQ[29], TCC_HIT[30], TCC_MISS[30], TCC_READ[30], TCC_REQ[30], TCC_HIT[31], TCC_MISS[31], TCC_READ[31], TCC_REQ[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050311 s (=16006.430348 MBytes/sec)
+   |-> [rocprof] Read: 0.514301 s (=1565.825449 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8205.256    0.06543     0.10624     0.07531
+   |-> [rocprof] Mul         8112.616    0.06618     0.11327     0.08363
+   |-> [rocprof] Add         17026.072   0.04730     0.07920     0.05626
+   |-> [rocprof] Triad       17119.501   0.04704     0.07669     0.05299
+   |-> [rocprof] Dot         27691.675   0.01939     0.04670     0.02047
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203241_3168988/input0_results_240709_203241
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_17.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_18.txt
+   |-> [rocprof] RPL: on '240709_203311' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_18.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203311_3169234'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203311_3169234/input0_results_240709_203311'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203311_3169234/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 96 metrics
+   |-> [rocprof] TCC_RW_REQ[0], TCC_TOO_MANY_EA_WRREQS_STALL[0], TCC_WRITE[0], TCC_RW_REQ[1], TCC_TOO_MANY_EA_WRREQS_STALL[1], TCC_WRITE[1], TCC_RW_REQ[2], TCC_TOO_MANY_EA_WRREQS_STALL[2], TCC_WRITE[2], TCC_RW_REQ[3], TCC_TOO_MANY_EA_WRREQS_STALL[3], TCC_WRITE[3], TCC_RW_REQ[4], TCC_TOO_MANY_EA_WRREQS_STALL[4], TCC_WRITE[4], TCC_RW_REQ[5], TCC_TOO_MANY_EA_WRREQS_STALL[5], TCC_WRITE[5], TCC_RW_REQ[6], TCC_TOO_MANY_EA_WRREQS_STALL[6], TCC_WRITE[6], TCC_RW_REQ[7], TCC_TOO_MANY_EA_WRREQS_STALL[7], TCC_WRITE[7], TCC_RW_REQ[8], TCC_TOO_MANY_EA_WRREQS_STALL[8], TCC_WRITE[8], TCC_RW_REQ[9], TCC_TOO_MANY_EA_WRREQS_STALL[9], TCC_WRITE[9], TCC_RW_REQ[10], TCC_TOO_MANY_EA_WRREQS_STALL[10], TCC_WRITE[10], TCC_RW_REQ[11], TCC_TOO_MANY_EA_WRREQS_STALL[11], TCC_WRITE[11], TCC_RW_REQ[12], TCC_TOO_MANY_EA_WRREQS_STALL[12], TCC_WRITE[12], TCC_RW_REQ[13], TCC_TOO_MANY_EA_WRREQS_STALL[13], TCC_WRITE[13], TCC_RW_REQ[14], TCC_TOO_MANY_EA_WRREQS_STALL[14], TCC_WRITE[14], TCC_RW_REQ[15], TCC_TOO_MANY_EA_WRREQS_STALL[15], TCC_WRITE[15], TCC_RW_REQ[16], TCC_TOO_MANY_EA_WRREQS_STALL[16], TCC_WRITE[16], TCC_RW_REQ[17], TCC_TOO_MANY_EA_WRREQS_STALL[17], TCC_WRITE[17], TCC_RW_REQ[18], TCC_TOO_MANY_EA_WRREQS_STALL[18], TCC_WRITE[18], TCC_RW_REQ[19], TCC_TOO_MANY_EA_WRREQS_STALL[19], TCC_WRITE[19], TCC_RW_REQ[20], TCC_TOO_MANY_EA_WRREQS_STALL[20], TCC_WRITE[20], TCC_RW_REQ[21], TCC_TOO_MANY_EA_WRREQS_STALL[21], TCC_WRITE[21], TCC_RW_REQ[22], TCC_TOO_MANY_EA_WRREQS_STALL[22], TCC_WRITE[22], TCC_RW_REQ[23], TCC_TOO_MANY_EA_WRREQS_STALL[23], TCC_WRITE[23], TCC_RW_REQ[24], TCC_TOO_MANY_EA_WRREQS_STALL[24], TCC_WRITE[24], TCC_RW_REQ[25], TCC_TOO_MANY_EA_WRREQS_STALL[25], TCC_WRITE[25], TCC_RW_REQ[26], TCC_TOO_MANY_EA_WRREQS_STALL[26], TCC_WRITE[26], TCC_RW_REQ[27], TCC_TOO_MANY_EA_WRREQS_STALL[27], TCC_WRITE[27], TCC_RW_REQ[28], TCC_TOO_MANY_EA_WRREQS_STALL[28], TCC_WRITE[28], TCC_RW_REQ[29], TCC_TOO_MANY_EA_WRREQS_STALL[29], TCC_WRITE[29], TCC_RW_REQ[30], TCC_TOO_MANY_EA_WRREQS_STALL[30], TCC_WRITE[30], TCC_RW_REQ[31], TCC_TOO_MANY_EA_WRREQS_STALL[31], TCC_WRITE[31]
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050082 s (=16079.599237 MBytes/sec)
+   |-> [rocprof] Read: 0.515972 s (=1560.755854 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8181.450    0.06562     0.11078     0.07362
+   |-> [rocprof] Mul         8108.127    0.06621     0.11336     0.08490
+   |-> [rocprof] Add         16966.666   0.04746     0.08342     0.05595
+   |-> [rocprof] Triad       17114.174   0.04705     0.08299     0.05402
+   |-> [rocprof] Dot         27728.075   0.01936     0.04621     0.02039
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203311_3169234/input0_results_240709_203311
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_18.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_2.txt
+   |-> [rocprof] RPL: on '240709_203341' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_2.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203341_3169477'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203341_3169477/input0_results_240709_203341'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203341_3169477/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 26 metrics
+   |-> [rocprof] SQ_INSTS_VALU_TRANS_F16, SQ_INSTS_VALU_ADD_F32, SQ_INSTS_VALU_MUL_F32, SQ_INSTS_VALU_FMA_F32, SQ_INSTS_VALU_TRANS_F32, SQ_INSTS_VALU_ADD_F64, SQ_INSTS_VALU_MUL_F64, SQ_INSTS_VALU_FMA_F64, TCP_VOLATILE_sum, TCP_TOTAL_ACCESSES_sum, TCP_TOTAL_READ_sum, TCP_TOTAL_WRITE_sum, TA_BUFFER_ATOMIC_WAVEFRONTS_sum, TA_BUFFER_TOTAL_CYCLES_sum, TD_ATOMIC_WAVEFRONT_sum, TD_STORE_WAVEFRONT_sum, SPI_RA_REQ_NO_ALLOC, SPI_RA_REQ_NO_ALLOC_CSN, CPC_CPC_STAT_STALL, CPC_UTCL1_STALL_ON_TRANSLATION, CPF_CPF_STAT_IDLE, CPF_CPF_TCIU_IDLE, TCC_REQ_sum, TCC_STREAMING_REQ_sum, TCC_HIT_sum, TCC_MISS_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049416 s (=16296.354379 MBytes/sec)
+   |-> [rocprof] Read: 0.518228 s (=1553.960972 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8037.402    0.06680     0.10536     0.07854
+   |-> [rocprof] Mul         7758.591    0.06920     0.11688     0.08567
+   |-> [rocprof] Add         16464.159   0.04891     0.08558     0.05695
+   |-> [rocprof] Triad       16697.866   0.04823     0.08536     0.05530
+   |-> [rocprof] Dot         25863.298   0.02076     0.04401     0.02148
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203341_3169477/input0_results_240709_203341
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_2.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_3.txt
+   |-> [rocprof] RPL: on '240709_203412' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_3.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203412_3169723'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203412_3169723/input0_results_240709_203412'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203412_3169723/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 24 metrics
+   |-> [rocprof] SQ_INSTS_VALU_TRANS_F64, SQ_INSTS_VALU_INT32, SQ_INSTS_VALU_INT64, SQ_INSTS_SMEM, SQ_INSTS_FLAT, SQ_INSTS_LDS, SQ_INSTS_GDS, SQ_INSTS_EXP_GDS, TCP_TOTAL_ATOMIC_WITH_RET_sum, TCP_TOTAL_ATOMIC_WITHOUT_RET_sum, TCP_TOTAL_WRITEBACK_INVALIDATES_sum, TCP_TOTAL_CACHE_ACCESSES_sum, TA_BUFFER_COALESCED_READ_CYCLES_sum, TA_BUFFER_COALESCED_WRITE_CYCLES_sum, TD_COALESCABLE_WAVEFRONT_sum, SPI_RA_RES_STALL_CSN, SPI_RA_TMP_STALL_CSN, CPC_CPC_UTCL2IU_BUSY, CPC_CPC_UTCL2IU_IDLE, CPF_CMP_UTCL1_STALL_ON_TRANSLATION, TCC_READ_sum, TCC_WRITE_sum, TCC_ATOMIC_sum, TCC_WRITEBACK_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049564 s (=16247.765960 MBytes/sec)
+   |-> [rocprof] Read: 0.515339 s (=1562.673346 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8074.513    0.06649     0.10806     0.07724
+   |-> [rocprof] Mul         7908.963    0.06788     0.11866     0.08518
+   |-> [rocprof] Add         16643.648   0.04839     0.08483     0.05668
+   |-> [rocprof] Triad       16681.616   0.04828     0.07969     0.05416
+   |-> [rocprof] Dot         25927.160   0.02071     0.04617     0.02190
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203412_3169723/input0_results_240709_203412
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_3.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_4.txt
+   |-> [rocprof] RPL: on '240709_203443' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_4.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203443_3169963'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203443_3169963/input0_results_240709_203443'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203443_3169963/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 22 metrics
+   |-> [rocprof] SQ_INSTS_BRANCH, SQ_INSTS_SENDMSG, SQ_WAIT_ANY, SQ_WAIT_INST_ANY, SQ_ACTIVE_INST_ANY, SQ_ACTIVE_INST_VMEM, SQ_ACTIVE_INST_LDS, SQ_ACTIVE_INST_VALU, TCP_UTCL1_TRANSLATION_MISS_sum, TCP_UTCL1_TRANSLATION_HIT_sum, TCP_UTCL1_PERMISSION_MISS_sum, TCP_UTCL1_REQUEST_sum, TA_ADDR_STALLED_BY_TC_CYCLES_sum, TA_TOTAL_WAVEFRONTS_sum, SPI_RA_WAVE_SIMD_FULL_CSN, SPI_RA_VGPR_SIMD_FULL_CSN, CPC_CPC_UTCL2IU_STALL, CPC_ME1_BUSY_FOR_PACKET_DECODE, TCC_EA_WRREQ_sum, TCC_EA_WRREQ_64B_sum, TCC_EA_WR_UNCACHED_32B_sum, TCC_EA_WRREQ_DRAM_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050241 s (=16029.017846 MBytes/sec)
+   |-> [rocprof] Read: 0.513726 s (=1567.578429 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8194.761    0.06551     0.10980     0.07834
+   |-> [rocprof] Mul         7985.868    0.06723     0.11060     0.08344
+   |-> [rocprof] Add         16557.142   0.04864     0.08483     0.05628
+   |-> [rocprof] Triad       16818.980   0.04788     0.08315     0.05393
+   |-> [rocprof] Dot         26167.224   0.02052     0.04343     0.02123
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203443_3169963/input0_results_240709_203443
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_4.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_5.txt
+   |-> [rocprof] RPL: on '240709_203514' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_5.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203514_3170423'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203514_3170423/input0_results_240709_203514'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203514_3170423/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 21 metrics
+   |-> [rocprof] SQ_ACTIVE_INST_SCA, SQ_ACTIVE_INST_EXP_GDS, SQ_ACTIVE_INST_MISC, SQ_ACTIVE_INST_FLAT, SQ_INST_CYCLES_VMEM_WR, SQ_INST_CYCLES_VMEM_RD, SQ_INST_CYCLES_SMEM, SQ_INST_CYCLES_SALU, TCP_TCP_LATENCY_sum, TCP_TCC_READ_REQ_LATENCY_sum, TCP_TCC_WRITE_REQ_LATENCY_sum, TCP_TCC_READ_REQ_sum, TA_ADDR_STALLED_BY_TD_CYCLES_sum, TA_DATA_STALLED_BY_TC_CYCLES_sum, SPI_RA_SGPR_SIMD_FULL_CSN, SPI_RA_LDS_CU_FULL_CSN, CPC_ME1_DC0_SPI_BUSY, TCC_EA_WRREQ_STALL_sum, TCC_EA_RDREQ_sum, TCC_EA_RDREQ_32B_sum, TCC_EA_RD_UNCACHED_32B_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049891 s (=16141.395017 MBytes/sec)
+   |-> [rocprof] Read: 0.515089 s (=1563.431804 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8225.933    0.06527     0.11070     0.07653
+   |-> [rocprof] Mul         7997.096    0.06713     0.11488     0.08657
+   |-> [rocprof] Add         16710.507   0.04819     0.08500     0.05814
+   |-> [rocprof] Triad       16818.224   0.04788     0.08428     0.05623
+   |-> [rocprof] Dot         26165.489   0.02052     0.04357     0.02095
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203514_3170423/input0_results_240709_203514
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_5.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_6.txt
+   |-> [rocprof] RPL: on '240709_203545' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_6.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203545_3170662'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203545_3170662/input0_results_240709_203545'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203545_3170662/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 20 metrics
+   |-> [rocprof] SQ_THREAD_CYCLES_VALU, SQ_IFETCH, SQ_LDS_BANK_CONFLICT, SQ_LDS_ADDR_CONFLICT, SQ_LDS_UNALIGNED_STALL, SQ_WAVES_EQ_64, SQ_WAVES_LT_64, SQ_WAVES_LT_48, TCP_TCC_WRITE_REQ_sum, TCP_TCC_ATOMIC_WITH_RET_REQ_sum, TCP_TCC_ATOMIC_WITHOUT_RET_REQ_sum, TCP_TCC_NC_READ_REQ_sum, TA_FLAT_WAVEFRONTS_sum, TA_FLAT_READ_WAVEFRONTS_sum, SPI_RA_BAR_CU_FULL_CSN, SPI_RA_TGLIM_CU_FULL_CSN, TCC_EA_RDREQ_DRAM_sum, TCC_TAG_STALL_sum, TCC_NORMAL_WRITEBACK_sum, TCC_ALL_TC_OP_WB_WRITEBACK_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050078 s (=16081.030981 MBytes/sec)
+   |-> [rocprof] Read: 0.499410 s (=1612.516644 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8037.978    0.06679     0.11602     0.07855
+   |-> [rocprof] Mul         7869.602    0.06822     0.11195     0.08621
+   |-> [rocprof] Add         16591.848   0.04854     0.07400     0.05736
+   |-> [rocprof] Triad       16858.012   0.04777     0.08095     0.05456
+   |-> [rocprof] Dot         26184.140   0.02050     0.04404     0.02147
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203545_3170662/input0_results_240709_203545
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_6.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_7.txt
+   |-> [rocprof] RPL: on '240709_203616' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_7.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203616_3170904'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203616_3170904/input0_results_240709_203616'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203616_3170904/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 20 metrics
+   |-> [rocprof] SQ_WAVES_LT_32, SQ_WAVES_LT_16, SQ_ITEMS, SQ_LDS_MEM_VIOLATIONS, SQ_LDS_ATOMIC_RETURN, SQ_LDS_IDX_ACTIVE, SQ_WAVES_RESTORED, SQ_WAVES_SAVED, TCP_TCC_NC_WRITE_REQ_sum, TCP_TCC_NC_ATOMIC_REQ_sum, TCP_TCC_UC_READ_REQ_sum, TCP_TCC_UC_WRITE_REQ_sum, TA_FLAT_WRITE_WAVEFRONTS_sum, TA_FLAT_ATOMIC_WAVEFRONTS_sum, SPI_RA_WVLIM_STALL_CSN, SPI_SWC_CSC_WR, TCC_NORMAL_EVICT_sum, TCC_ALL_TC_OP_INV_EVICT_sum, TCC_TOO_MANY_EA_WRREQS_STALL_sum, TCC_EA_ATOMIC_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049746 s (=16188.356766 MBytes/sec)
+   |-> [rocprof] Read: 0.518442 s (=1553.320390 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8154.982    0.06583     0.11523     0.07553
+   |-> [rocprof] Mul         7882.629    0.06811     0.11373     0.08524
+   |-> [rocprof] Add         16563.695   0.04862     0.08421     0.05790
+   |-> [rocprof] Triad       16731.901   0.04813     0.07716     0.05633
+   |-> [rocprof] Dot         26150.686   0.02053     0.04352     0.02121
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203616_3170904/input0_results_240709_203616
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_7.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_8.txt
+   |-> [rocprof] RPL: on '240709_203647' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_8.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203647_3171148'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203647_3171148/input0_results_240709_203647'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203647_3171148/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 17 metrics
+   |-> [rocprof] SQ_INSTS_SMEM_NORM, SQ_INSTS_MFMA, SQ_INSTS_VALU_MFMA_I8, SQ_INSTS_VALU_MFMA_F16, SQ_INSTS_VALU_MFMA_BF16, SQ_INSTS_VALU_MFMA_F32, SQ_INSTS_VALU_MFMA_F64, SQ_VALU_MFMA_BUSY_CYCLES, TCP_TCC_UC_ATOMIC_REQ_sum, TCP_TCC_CC_READ_REQ_sum, TCP_TCC_CC_WRITE_REQ_sum, TCP_TCC_CC_ATOMIC_REQ_sum, SPI_VWC_CSC_WR, SPI_RA_BULKY_CU_FULL_CSN, TCC_EA_RDREQ_LEVEL_sum, TCC_EA_WRREQ_LEVEL_sum, TCC_EA_ATOMIC_LEVEL_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049194 s (=16369.988326 MBytes/sec)
+   |-> [rocprof] Read: 0.510435 s (=1577.685790 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8105.896    0.06623     0.11480     0.07604
+   |-> [rocprof] Mul         7921.288    0.06778     0.11340     0.08412
+   |-> [rocprof] Add         16758.073   0.04805     0.08394     0.05771
+   |-> [rocprof] Triad       17025.192   0.04730     0.08360     0.05432
+   |-> [rocprof] Dot         26799.846   0.02003     0.04307     0.02109
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203647_3171148/input0_results_240709_203647
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_8.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_9.txt
+   |-> [rocprof] RPL: on '240709_203717' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/pmc_perf_9.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203717_3171390'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203717_3171390/input0_results_240709_203717'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203717_3171390/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 12 metrics
+   |-> [rocprof] SQ_INSTS_FLAT_LDS_ONLY, SQ_INSTS_VALU_MFMA_MOPS_I8, SQ_INSTS_VALU_MFMA_MOPS_F16, SQ_INSTS_VALU_MFMA_MOPS_BF16, SQ_INSTS_VALU_MFMA_MOPS_F32, SQ_INSTS_VALU_MFMA_MOPS_F64, SQC_TC_INST_REQ, SQC_TC_DATA_READ_REQ, TCP_TCC_RW_READ_REQ_sum, TCP_TCC_RW_WRITE_REQ_sum, TCP_TCC_RW_ATOMIC_REQ_sum, TCP_PENDING_STALL_CYCLES_sum
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.049991 s (=16108.881012 MBytes/sec)
+   |-> [rocprof] Read: 0.515154 s (=1563.234008 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8195.104    0.06551     0.10733     0.07400
+   |-> [rocprof] Mul         7991.783    0.06718     0.11309     0.08301
+   |-> [rocprof] Add         17094.443   0.04711     0.07894     0.05613
+   |-> [rocprof] Triad       16867.861   0.04774     0.08326     0.05611
+   |-> [rocprof] Dot         26985.999   0.01989     0.04337     0.02146
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203717_3171390/input0_results_240709_203717
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/pmc_perf_9.csv' is generating
+   |-> [rocprof] 
+[profiling] Current input file: /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/timestamps.txt
+   |-> [rocprof] RPL: on '240709_203748' from '/opt/rocm-5.7.2' in '/home/users/tz2201/benchmarks/BabelStream/build'
+   |-> [rocprof] RPL: profiling '""./hip-stream""'
+   |-> [rocprof] RPL: input file '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/perfmon/timestamps.txt'
+   |-> [rocprof] RPL: output dir '/tmp/rpl_data_240709_203748_3171629'
+   |-> [rocprof] RPL: result dir '/tmp/rpl_data_240709_203748_3171629/input0_results_240709_203748'
+   |-> [rocprof] BabelStream
+   |-> [rocprof] Version: 5.0
+   |-> [rocprof] Implementation: HIP
+   |-> [rocprof] Running kernels 100 times
+   |-> [rocprof] Precision: double
+   |-> [rocprof] Array size: 268.4 MB (=0.3 GB)
+   |-> [rocprof] Total size: 805.3 MB (=0.8 GB)
+   |-> [rocprof] ROCProfiler: input from "/tmp/rpl_data_240709_203748_3171629/input0.xml"
+   |-> [rocprof] gpu_index =
+   |-> [rocprof] kernel =
+   |-> [rocprof] range =
+   |-> [rocprof] 0 metrics
+   |-> [rocprof] Using HIP device AMD Instinct MI210
+   |-> [rocprof] Driver: 50731921
+   |-> [rocprof] Memory: MANAGED
+   |-> [rocprof] Init: 0.050053 s (=16089.045620 MBytes/sec)
+   |-> [rocprof] Read: 0.494309 s (=1629.154934 MBytes/sec)
+   |-> [rocprof] Function    MBytes/sec  Min (sec)   Max         Average
+   |-> [rocprof] Copy        8323.065    0.06450     0.10707     0.07473
+   |-> [rocprof] Mul         8204.431    0.06544     0.10647     0.08145
+   |-> [rocprof] Add         17228.898   0.04674     0.08377     0.05439
+   |-> [rocprof] Triad       17447.684   0.04616     0.07992     0.05419
+   |-> [rocprof] Dot         28162.780   0.01906     0.04180     0.01965
+   |-> [rocprof] 
+   |-> [rocprof] ROCPRofiler: 501 contexts collected, output directory /tmp/rpl_data_240709_203748_3171629/input0_results_240709_203748
+   |-> [rocprof] File '/storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200/timestamps.csv' is generating
+   |-> [rocprof] 
+[roofline] Checking for roofline.csv in /storage/users/tz2201/benchmarks/BabelStream/build/workloads/babel_all/MI200
+[roofline] No roofline data found. Generating...

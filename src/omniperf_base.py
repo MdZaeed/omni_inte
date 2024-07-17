@@ -34,7 +34,8 @@ from utils.utils import (
     get_version,
     get_version_display,
     detect_rocprof,
-    get_submodules,
+    get_submodules,    # visualize_advanced_group = visualize_parser.add_argument_group("Advanced Options")
+
     console_debug,
     console_log,
     console_error,
@@ -86,6 +87,8 @@ class Omniperf:
             self.detect_profiler()
         elif self.__mode == "analyze":
             self.detect_analyze()
+        elif self.__mode == "visualize":
+            self.detect_visualize()
 
         console_debug("Execution mode = %s" % self.__mode)
 
@@ -141,7 +144,9 @@ class Omniperf:
         else:
             self.__analyze_mode = "cli"
         return
-
+    
+    def detect_visualize(self):
+        return
     @demarcate
     def load_soc_specs(self, sysinfo: dict = None):
         """Load OmniSoC instance for Omniperf run"""
@@ -281,5 +286,17 @@ class Omniperf:
         analyzer.set_soc(self.__soc)
         analyzer.pre_processing()
         analyzer.run_analysis()
+
+        return
+    
+    @demarcate
+    def run_visualize(self):
+        self.print_graphic()
+
+        from omniperf_visualize.visualize_cli import visualize_cli
+
+        visualizer = visualize_cli(self.__args, self.__supported_archs)
+        visualizer.sanitize()
+        visualizer.run_visualize()
 
         return

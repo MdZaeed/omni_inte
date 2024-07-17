@@ -538,3 +538,66 @@ Examples:
         metavar="",
         help="\t\tSpecify the specs to correct.",
     )
+
+    ## Analyze Command Line Options
+    ## ----------------------------
+    visualize_parser = subparsers.add_parser(
+        "visualize",
+        help="Visualize the importance analysis of multiple workloads",
+        usage="""
+omniperf visualize --path <parent_workloads_path> [visualize options]
+
+-----------------------------------------------------------------------------------
+Examples:
+\tomniperf visualize -p ~/rawDatasets/gpu-stream2/amd2_stream__1024/MI200/
+-----------------------------------------------------------------------------------
+        """,
+        prog="tool",
+        allow_abbrev=False,
+        formatter_class=lambda prog: argparse.RawTextHelpFormatter(
+            prog, max_help_position=40
+        ),
+    )
+    visualize_parser._optionals.title = "Help"
+
+    add_general_group(visualize_parser, omniperf_version)
+    visualize_group = visualize_parser.add_argument_group("Visualize Options")
+    # visualize_advanced_group = visualize_parser.add_argument_group("Advanced Options")
+
+    visualize_group.add_argument(
+        "-p",
+        "--path",
+        dest="path",
+        required=False,
+        metavar="",
+        nargs="+",
+        action="append",
+        help="\t\tSpecify the raw data root dirs or desired results directory.",
+    )
+
+    visualize_group.add_argument(
+        "-t",
+        "--target",
+        dest="target",
+        required=False,
+        default="runtime",
+        help="\t\tSpecify the target metric",
+    )
+
+    visualize_group.add_argument(
+        "-n",
+        "--port",
+        dest="port",
+        required=False,
+        default="7603",
+        help="\t\tSpecify the visualization port",
+    )
+
+    visualize_group.add_argument(
+        "-i",
+        "--inverse",
+        dest="inverse",
+        required=False,
+        default="False",
+        help="\t\tSpecify whether the target has to be inversed",
+    )

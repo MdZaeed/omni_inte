@@ -42,6 +42,8 @@ def main():
         omniperf.update_db()
     elif mode == "analyze":
         omniperf.run_analysis()
+    elif mode == "visualize":
+        omniperf.run_visualize()
     else:
         console_error("Unsupported execution mode")
 

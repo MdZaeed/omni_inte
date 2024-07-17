@@ -69,6 +69,8 @@ class cli_analysis(OmniAnalyze_Base):
     def run_analysis(self):
         """Run CLI analysis."""
         super().run_analysis()
+        print('Zayed list stats')
+        print(self.get_args())
         if self.get_args().list_stats:
             tty.show_kernel_stats(
                 self.get_args(),
