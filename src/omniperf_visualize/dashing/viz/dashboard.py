@@ -31,10 +31,36 @@ def create_page(data_loader):
 	charts = data_loader["charts"]
 	title = data_loader.get_option('title', 'untitled chart')
 	chart_elems = list(html.H1(children=title))
-	instructions = 'This tool provides Dashing\'s important analysis for the tuning parameters of the tuning problem.What is Importance analysis?Importance analysis reveals the importance of a resource against an objective function. A resource is given more importance if the resource function closely matches the trends of the target function.What is Dashing?Dashing implements several visualization tools for the interactive exploration of performance data with machine learning-based performance analysis techniques.How to read the importance analysis?The important analysis produces sunburst charts and data tables.Sunburst charts: There are four layers in the following sunburst chart. At each layer, the more important an element is the more area it gets. The first and central layer shows the name of the objective function. The second layer lists the importance of different phases during an application run. The third layer lists the importance of the resource group. The final and outer layer shows the importance of individual resources. If a sunburst chart is missing it means that the analysis found no resource important enough to show. Click on a sunburst region to expand it further. Tables: The tables include all the resources and the group information so that users can find the exact importance of a resource along with another resource with no importance.    Line charts: The linecharts that follow the sunburst show the objective function with the predictive function built from each resource. One can see how well the predictive function of a single resource matches the trends of the objective function.    Tables: The tables include all the resource and the groups information so that users can find the exact importance of a resource along with other resource with no importance.'
-	chart_elems.append(html.Div(html.P(instructions)))
+	instructions = ['This tool provides Dashing\'s important analysis for the tuning parameters of the tuning problem.',
+	html.Br(),
+	html.B('What is Importance analysis?'),
+	html.Br(),
+	'Importance analysis reveals the importance of a resource against an objective function. A resource is given more importance if the resource function closely matches the trends of the target function.',
+	html.Br(),
+	html.B('What is Dashing?'),
+	html.Br(),
+	'Dashing implements several visualization tools for the interactive exploration of performance data with machine learning-based performance analysis techniques.',
+	html.Br(),
+	html.B('How to read the importance analysis?'),
+	html.Br(),
+	'Sunburst charts: There are four layers in the following sunburst chart. At each layer, the more important an element is the more area it gets.',
+	html.Ul([html.Li('The first and central layer shows the name of the objective function.'),
+		  html.Li('The second layer lists the importance of different phases during an application run.'),
+		  html.Li('The third layer lists the importance of the resource group.'),
+		  html.Li('The final and outer layer shows the importance of individual resources.')]),
+	html.Br(),
+	'If a sunburst chart is missing it means that the analysis found no resource important enough to show. Click on a sunburst region to expand it further.']
+	# chart_elems.append(html.Div(html.P(instructions)))
 	for chart in charts:
-		chart_elems.append(html.Div(dcc.Graph(id=str(chart), figure=chart)))
+		chart_elems.append(html.Div([
+			html.Div(dcc.Graph(id=str(chart), figure=chart), style={'width': '59%', 'display': 'inline-block'}),
+			html.Div(html.P(instructions), style={'width': '40%', 'display': 'inline-block', 'float': 'right'})
+		]))
+
+		# chart_elems.append(html.Div(dcc.Graph(id=str(chart), figure=chart, style={float:'left'})))
+		# chart_elems.append(html.Div(html.P(instructions),style={float:'right'}))
+
+
 		# chart.write_html("/home/mohammad/gptune-data/" + str(charts.index(chart)) + '.html')
 		# chart.write_json("/home/mohammad/gptune-data/" + str(charts.index(chart)) + '.json')
 		# chart2 = {}
