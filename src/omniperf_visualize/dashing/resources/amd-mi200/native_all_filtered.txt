@@ -1661,3 +1661,16 @@ MFMA_Util
 GRBM_GUI_ACTIVE_PER_XCD
 SQC_TC_STALL
 TCC_EA_RDREQ_IO_CREDIT_STALL_std
+OI_HBM
+OI_LDS
+OI_L1D
+OI_L2D
+VALU_ops
+MFMA_ops
+LDS_bytes
+L1D_bytes
+L2D_bytes
+HBM_bytes
+total_flops
+Unnamed: 0.1
+

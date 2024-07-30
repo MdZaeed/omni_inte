@@ -517,7 +517,7 @@ def sunburst(data_loader):
     # csv_file.close()
 
     # Fourth layer appending to the sunburst
-    hover_label = '%s<br>Percent Errshorten_event_nameor Reduced: %0.2f%%<br>%s'
+    hover_label = '%s<br>Percent Error Reduced: %0.2f%%<br>%s'
     for reg in normed_belief_res_ev_map:
         for resource in normed_belief_res_ev_map[reg]:
             for event, belief in normed_belief_res_ev_map[reg][resource].items():

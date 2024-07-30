@@ -34,10 +34,115 @@ import copy
 from collections import defaultdict
 from omniperf_visualize.dashing.driver import driver
 from omniperf_base import Omniperf
+import numpy as np
 
+LDS_HITS_COL = 'SQ_LDS_IDX_ACTIVE'
+LDS_MISS_COL = 'SQ_LDS_BANK_CONFLICT'
+L1D_COL = 'TCP_TOTAL_CACHE_ACCESSES_sum'
+L2_WRITE_COL = 'TCP_TCC_WRITE_REQ_sum'
+L2_ATOMIC_WRET_REQ_COL = 'TCP_TCC_ATOMIC_WITH_RET_REQ_sum'
+L2_ATOMIC_WORET_REQ_COL = 'TCP_TCC_ATOMIC_WITHOUT_RET_REQ_sum'
+L2_READ_COL = 'TCP_TCC_READ_REQ_sum'
 
+# DANIEL: ADDING NEW VARIABLES FROM OMNIPERF
+HBM_READ_STALL_COL = 'TCC_EA_RDREQ_DRAM_CREDIT_STALL_sum'
+HBM_WRITE_STALL_COL = 'TCC_EA_WRREQ_DRAM_CREDIT_STALL_sum'
+HBM_READ_COL = 'TCC_EA_RDREQ_DRAM_sum'
+HBM_WRITE_COL = 'TCC_EA_WRREQ_DRAM_sum'
+VALU_INSTS_COL = 'SQ_INSTS_VALU'
+MFMA_INSTS_COL = 'SQ_INSTS_MFMA'
+
+VALU_FACTOR = 64
+MFMA_FACTOR = 512
+
+BYTES_PER_CACHE_LINE = 64
+NUM_L2_BANKS = 32
+LDS_MAGIC_NUMBER = 4
 
 class visualize_cli(OmniVisualize_Base):
+
+    def calculate_bw(self, df, bytes_col, output_col):
+
+        # df['attainable_' + bytes_col] = df[['peak_valu_flops','intensity']].values.min(axis=1)
+        # df['attainable_kernel_opsec'] = min(df['curr_ai'] * df['HBM_bytes'], peak_valu_flops)
+        df[output_col] = df['total_flops'] / df[bytes_col]
+
+        return df['temp']
+    
+    def parse_roofline_data(self,roof_df):
+        roofline_data_map = {}
+
+        # the device id in roofline.csv (0, 1) does not match the gpu ids in pmc_perf.csv (2, 3)
+        # so use two separate counters
+        roofline_counter = 0
+        peak_bw_lds = roof_df['LDSBw'][roofline_counter]
+        peak_bw_l1d = roof_df['L1Bw'][roofline_counter]
+        peak_bw_l2 = roof_df['L2Bw'][roofline_counter]
+        peak_bw_hbm = roof_df['HBMBw'][roofline_counter]
+            # These two values are the peak valu and mfma performance for a certain data type.
+            # They need to be changed if you are using a different data type.
+            # For VALU, The options are: FP64Flops and FP32Flops
+            # For MFMA, the options are: MFMAF64Flops, MFMAF32Flops, MFMAF16Flops, MFMABF16Flops
+        peak_valu_flops = roof_df['FP32Flops'][roofline_counter]
+        peak_mfma_flops = roof_df['MFMAF32Flops'][roofline_counter]
+
+        roofline_data_map = (peak_bw_lds, peak_bw_l1d, peak_bw_l2, peak_bw_hbm, peak_valu_flops, peak_mfma_flops)
+
+        roofline_counter += 1
+        
+        return roofline_data_map    
+
+    def find_lds_bytes(self,df_row):
+        return NUM_L2_BANKS * LDS_MAGIC_NUMBER * \
+            (df_row[LDS_HITS_COL] - df_row[LDS_MISS_COL])
+
+    def find_l1d_bytes(self,df_row):
+        return BYTES_PER_CACHE_LINE * df_row[L1D_COL]
+
+    def find_l2_bytes(self,df_row):
+        return BYTES_PER_CACHE_LINE * \
+                (df_row[L2_WRITE_COL] + df_row[L2_WRITE_COL] + \
+                df_row[L2_ATOMIC_WRET_REQ_COL] + df_row[L2_ATOMIC_WORET_REQ_COL] )
+
+    def find_hbm_bytes(self,df):
+        # bytes of HBM traffic is a bit confusing to parse at first glance
+        # but traffic is split between 32B and 64B traffic. reads keep track of 32B reads
+        # and all reads, and writes keep track of 64B writes and all writes
+        return  (
+                (df["TCC_EA_RDREQ_32B_sum"] * 32)
+                + ((df["TCC_EA_RDREQ_sum"] - df["TCC_EA_RDREQ_32B_sum"]) * 64)
+                + (df["TCC_EA_WRREQ_64B_sum"] * 64)
+                + ((df["TCC_EA_WRREQ_sum"] - df["TCC_EA_WRREQ_64B_sum"]) * 32)
+                )
+
+    def find_valu_ops_bytes_mi200(self,df_row):
+        valu_fops = VALU_FACTOR * \
+                    (df_row["SQ_INSTS_VALU_ADD_F16"] + \
+                    df_row["SQ_INSTS_VALU_MUL_F16"] + \
+                    2 * df_row["SQ_INSTS_VALU_FMA_F16"] + \
+                    df_row["SQ_INSTS_VALU_TRANS_F16"]) + \
+                    VALU_FACTOR * \
+                    (df_row["SQ_INSTS_VALU_ADD_F32"] + \
+                    df_row["SQ_INSTS_VALU_MUL_F32"] + \
+                    2 * df_row["SQ_INSTS_VALU_FMA_F32"] + \
+                    df_row["SQ_INSTS_VALU_TRANS_F32"]) + \
+                    VALU_FACTOR * \
+                    (df_row["SQ_INSTS_VALU_ADD_F64"] + \
+                    df_row["SQ_INSTS_VALU_MUL_F64"] + \
+                    2 * df_row["SQ_INSTS_VALU_FMA_F64"] + \
+                    df_row["SQ_INSTS_VALU_TRANS_F64"])
+
+        return valu_fops
+        # This line is currently commented out since we do not track INT32/INT64 at this time.
+        # Could be tracked in the future.
+        ##valu_iops = VALU_FACTOR * (df_row['SQ_INSTS_VALU_INT32'] + df_row['SQ_INSTS_VALU_INT64'])
+        ##total_valu_ops = valu_fops + valu_iops
+
+    def find_mfma_ops_bytes_mi200(self,df_row):
+        mfma_fops = MFMA_FACTOR * (df_row["SQ_INSTS_VALU_MFMA_MOPS_F16"] + df_row["SQ_INSTS_VALU_MFMA_MOPS_BF16"] + \
+                                df_row["SQ_INSTS_VALU_MFMA_MOPS_F32"] + df_row["SQ_INSTS_VALU_MFMA_MOPS_F64"])
+
+        return mfma_fops
 
     def generate_dash_data_format(self, df, feature_list, target, regions, outfilename, region_column="app"):
         # feature_list_and_target = feature_list[:]
@@ -172,7 +277,7 @@ class visualize_cli(OmniVisualize_Base):
         filter_list_plus = filter_list[:]
         filter_list_plus.append('Kernel_Name')
 
-        temp_folder_path = '/home/cup7/omni_inte/omniperf/build/temp'
+        temp_folder_path = '/home/mohammad/omni_inte/build/temp'
         for filename in os.listdir(temp_folder_path):
             file_path = os.path.join(temp_folder_path, filename)
             try:
@@ -187,6 +292,7 @@ class visualize_cli(OmniVisualize_Base):
 
         pathlib.Path("./temp/").mkdir(parents=True, exist_ok=True)
 
+        individual_run_dfs = {}
         for folder_name in folder_names:
             prefix = parent_folder_path + '/' + folder_name + '/MI200/' 
             df = pd.read_csv(prefix + 'timestamps.csv')
@@ -202,9 +308,49 @@ class visualize_cli(OmniVisualize_Base):
                 df = pd.concat([df, temp_df], axis=1)
             df = df.drop(columns=['Dispatch_ID'])
             # print(df.columns)
+            individual_run_dfs[folder_name] = df
             df.to_csv("./temp/" +  folder_name + '.csv')
 
-        input_dir = "./temp/"
+        extended_individual_dfs = {}
+        for folder_name in folder_names:
+
+            roofline_df = pd.read_csv(parent_folder_path + '/' + folder_name + '/MI200/' + 'roofline.csv')
+            roofline_max_map = self.parse_roofline_data(roofline_df)
+            peak_bw_lds, peak_bw_l1d, peak_bw_l2, peak_bw_hbm, peak_valu_flops, peak_mfma_flops = roofline_max_map
+            print(peak_bw_lds)
+
+            new_df = individual_run_dfs[folder_name]
+            # new_df = pd.read_csv("./temp/" +  folder_name + '.csv')
+            new_df['VALU_ops'] = self.find_valu_ops_bytes_mi200(new_df)
+            new_df['MFMA_ops'] = self.find_mfma_ops_bytes_mi200(new_df)
+            new_df['LDS_bytes'] = self.find_lds_bytes(new_df)
+            new_df['L1D_bytes'] = self.find_l1d_bytes(new_df)
+            new_df['L2D_bytes'] = self.find_l2_bytes(new_df)
+            new_df['HBM_bytes'] = self.find_hbm_bytes(new_df)
+
+            new_df['total_flops'] = new_df['VALU_ops'] + new_df['MFMA_ops']
+            new_df['OI_HBM'] = np.where(new_df['HBM_bytes'] == 0, 0, new_df['total_flops'] / new_df['HBM_bytes'])
+            new_df['OI_LDS'] = np.where(new_df['LDS_bytes'] == 0, 0, new_df['total_flops'] / new_df['LDS_bytes'])
+            new_df['OI_L1D'] = np.where(new_df['L1D_bytes'] == 0 , 0, new_df['total_flops'] / new_df['L1D_bytes'])
+            new_df['OI_L2D'] = np.where(new_df['L2D_bytes'] == 0 , 0, new_df['total_flops'] / new_df['L2D_bytes'])
+            # # new_df['curr_ai'] = new_df['total_flops'] / new_df['HBM_bytes']
+            # new_df['kernel_opsec'] = new_df['total_flops'] / new_df['runtime']
+
+            # new_df['peak_valu_flops'] = peak_valu_flops
+            # # new_df['intensity'] = new_df['curr_ai'] * new_df['HBM_bytes']
+            # # new_df['attainable_kernel_opsec'] = new_df[['peak_valu_flops','intensity']].values.min(axis=1)
+            # # new_df['attainable_kernel_opsec'] = min(new_df['curr_ai'] * new_df['HBM_bytes'], peak_valu_flops)
+            # # new_df['HBM_BW'] = new_df['kernel_opsec'] / new_df['attainable_kernel_opsec']
+            # self.calculate_bw(new_df, 'HBM_bytes', 'HBM_BW')
+
+            # new_df = new_df.replace([np.inf,], np.nan, inplace=True)
+            new_df.to_csv("./temp_2/" +  folder_name + '_1.csv')
+            extended_individual_dfs[folder_name] = new_df      
+
+        individual_run_dfs.clear()
+
+
+        input_dir = "./temp_2/"
         workloads = dict()
 
         filelist = [os.path.join(input_dir,f) for f in os.listdir(input_dir) if f.endswith('.csv')]
@@ -346,11 +492,13 @@ class visualize_cli(OmniVisualize_Base):
         drvr = driver()
         print(os.getcwd())
 
-        file_name = '/home/cup7/omni_inte/omniperf/src/omniperf_visualize/dashing/configs/omni_inte.yml'
+        # file_name = '/home/cup7/omni_inte/omniperf/src/omniperf_visualize/dashing/configs/omni_inte.yml'
+        file_name = '/home/mohammad/omni_inte/src/omniperf_visualize/dashing/configs/omni_inte.yml'
         with open(file_name, 'w') as txtfile:
             s = 'tuning_problem_' + str(user_target) + ':'
             txtfile.write(s + '\n')
-            s = '  data: /home/cup7/omni_inte/omniperf/build/temp/output/final_runtime.csv'
+            # s = '  data: /home/cup7/omni_inte/omniperf/build/temp/output/final_runtime.csv'
+            s = '  data: /home/mohammad/omni_inte/build/temp/output/final_runtime.csv'
             txtfile.write(s + '\n')
             s = '  tasks:'
             txtfile.write(s + '\n')
