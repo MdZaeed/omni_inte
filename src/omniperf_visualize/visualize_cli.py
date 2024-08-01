@@ -258,7 +258,7 @@ class visualize_cli(OmniVisualize_Base):
         super().run_visualize()
         print('First run of visualize Zaeed')
         parent_folder_path = str(self.get_args().path[0][0])
-        user_target = str(self.get_args().target)
+        user_target = str(self.get_args().target).split(',')
         port = str(self.get_args().port)
         inverse = str(self.get_args().inverse)
 
@@ -273,7 +273,7 @@ class visualize_cli(OmniVisualize_Base):
                'grd', 'wgr', 'lds', 'scr', 'arch_vgpr', 'accum_vgpr', 'sgpr', 'wave_size', 'sig' 
                , 'obj', 'DispatchNs', 'BeginNs', 'EndNs', 'CompleteNs', 'obj_1', 'obj_2', 'obj_3',
                'obj_4', 'obj_5', 'obj_6', 'obj_7', 'obj_8', 'obj_9', 'obj_10', 'obj_11', 'obj_12',
-               'obj_13', 'obj_14', 'obj_15', 'obj_16', 'obj_17', 'obj_18']
+               'obj_13', 'obj_14', 'obj_15', 'obj_16', 'obj_17', 'obj_18', 'Grid_Size', 'Workgroup_Size']
         filter_list_plus = filter_list[:]
         filter_list_plus.append('Kernel_Name')
 
@@ -292,6 +292,25 @@ class visualize_cli(OmniVisualize_Base):
 
         pathlib.Path("./temp/").mkdir(parents=True, exist_ok=True)
 
+        # individual_run_dfs = {}
+        # for folder_name in folder_names:
+        #     prefix = parent_folder_path + '/' + folder_name + '/MI200/' 
+        #     df = pd.read_csv(prefix + 'timestamps.csv')
+        #     df['runtime'] = df['End_Timestamp'] - df ['Start_Timestamp']
+        #     temp_filter_list = list(set(filter_list) & set(df.columns))
+        #     df = df.drop(columns=temp_filter_list)
+        #     for file_name in file_names:
+        #         temp_df = pd.read_csv(prefix + file_name)
+        #         temp_filter_list = list(set(filter_list_plus) & set(temp_df.columns))
+        #         # print(temp_filter_list)
+        #         temp_df = temp_df.drop(columns=temp_filter_list)
+        #         # print(temp_df.shape)
+        #         df = pd.concat([df, temp_df], axis=1)
+        #     df = df.drop(columns=['Dispatch_ID'])
+        #     # print(df.columns)
+        #     individual_run_dfs[folder_name] = df
+        #     df.to_csv("./temp/" +  folder_name + '.csv')
+
         individual_run_dfs = {}
         for folder_name in folder_names:
             prefix = parent_folder_path + '/' + folder_name + '/MI200/' 
@@ -302,10 +321,20 @@ class visualize_cli(OmniVisualize_Base):
             for file_name in file_names:
                 temp_df = pd.read_csv(prefix + file_name)
                 temp_filter_list = list(set(filter_list_plus) & set(temp_df.columns))
+                temp_remove_list = list(set(df.columns) & set(temp_df.columns))
+                # combined_filter_list = temp_filter_list
+                combined_filter_list = list(set(temp_filter_list + temp_remove_list))
+                if 'Dispatch_ID' in combined_filter_list:
+                    combined_filter_list.remove('Dispatch_ID')
                 # print(temp_filter_list)
-                temp_df = temp_df.drop(columns=temp_filter_list)
-                print(temp_df.shape)
-                df = pd.concat([df, temp_df], axis=1)
+                # print(temp_remove_list)
+                # print("WHYYYYYYYYYYYYYYYYYYYYYY")
+                # print(combined_filter_list)
+                temp_df = temp_df.drop(columns=combined_filter_list)
+                # temp_df = temp_df.drop(columns=temp_filter_list)
+                # print(temp_df.shape)
+                # df = pd.concat([df, temp_df], axis=1)
+                df = df.join(temp_df.set_index('Dispatch_ID'), on='Dispatch_ID')
             df = df.drop(columns=['Dispatch_ID'])
             # print(df.columns)
             individual_run_dfs[folder_name] = df
@@ -317,7 +346,7 @@ class visualize_cli(OmniVisualize_Base):
             roofline_df = pd.read_csv(parent_folder_path + '/' + folder_name + '/MI200/' + 'roofline.csv')
             roofline_max_map = self.parse_roofline_data(roofline_df)
             peak_bw_lds, peak_bw_l1d, peak_bw_l2, peak_bw_hbm, peak_valu_flops, peak_mfma_flops = roofline_max_map
-            print(peak_bw_lds)
+            # print(peak_bw_lds)
 
             new_df = individual_run_dfs[folder_name]
             # new_df = pd.read_csv("./temp/" +  folder_name + '.csv')
@@ -353,6 +382,7 @@ class visualize_cli(OmniVisualize_Base):
         input_dir = "./temp_2/"
         workloads = dict()
 
+        
         filelist = [os.path.join(input_dir,f) for f in os.listdir(input_dir) if f.endswith('.csv')]
         workloads[0] = filelist
 
@@ -366,32 +396,58 @@ class visualize_cli(OmniVisualize_Base):
         df_dict_input = {}
         total_file_count = 0
 
-        for ind in range(len(workloads)):
-            file_name_list = workloads[ind]
-            for fname in file_name_list:
-                if not os.path.exists(fname):
-                    print(fname, ' does not exist....')
-                    continue
-                else:
-                    # print(total_file_count, fname)
-                    df_original2 = pd.read_csv(fname)
+        for df_key in extended_individual_dfs.keys():
+            df_original2 = extended_individual_dfs[df_key]
+            # df_original2[df_original2.index.name] = df_original2.name
+            df_original2['index'] = range(1, len(df_original2) + 1)
+            df_original2 = df_original2.set_index('index')
+            # print(df_original2.index.name)
+            # print(df_original2['GRBM_GUI_ACTIVE'])
 
-                    ######### New Formulas here ######################
-                    df_original2['VALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_VALU']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
-                    df_original2['GPU_Activity'] = (df_original2['GRBM_GUI_ACTIVE'] / df_original2['GRBM_COUNT']) * 100
-                    df_original2['GPU_Occupancy'] = df_original2['SQ_ACCUM_PREV_HIRES'] / df_original2['GRBM_GUI_ACTIVE']
-                    df_original2['SALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_SCA']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
-                    df_original2['VALU_threads_per_wave_avg'] = df_original2['SQ_THREAD_CYCLES_VALU']/df_original2['SQ_ACTIVE_INST_VALU']
-                    df_original2['MFMA_Util'] = (100 * df_original2['SQ_VALU_MFMA_BUSY_CYCLES'])/(df_original2['GRBM_GUI_ACTIVE'] * 104)
+            ######### New Formulas here ######################
+            df_original2['VALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_VALU']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
+            df_original2['GPU_Activity'] = (df_original2['GRBM_GUI_ACTIVE'] / df_original2['GRBM_COUNT']) * 100
+            df_original2['GPU_Occupancy'] = df_original2['SQ_ACCUM_PREV_HIRES'] / df_original2['GRBM_GUI_ACTIVE']
+            df_original2['SALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_SCA']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
+            df_original2['VALU_threads_per_wave_avg'] = df_original2['SQ_THREAD_CYCLES_VALU']/df_original2['SQ_ACTIVE_INST_VALU']
+            df_original2['MFMA_Util'] = (100 * df_original2['SQ_VALU_MFMA_BUSY_CYCLES'])/(df_original2['GRBM_GUI_ACTIVE'] * 104)
 
 
-                    print(df_original2['Kernel_Name'])
-                    df_original2['Kernel_Name']=[s.replace(',','_') for s in df_original2['Kernel_Name']]
-                    df_original2['Kernel_Name']=[s.replace(' ','_') for s in df_original2['Kernel_Name']]
-                    df_original2 = df_original2.groupby(['Kernel_Name']).agg(func='mean')
-                    df_dict_input[total_file_count] = df_original2.groupby(['Kernel_Name']).agg(func='mean')
-                    df_dict_input[total_file_count] = df_dict_input[total_file_count].reset_index()
-                    total_file_count += 1
+            # print(df_original2['Kernel_Name'])
+            df_original2['Kernel_Name']=[s.replace(',','_') for s in df_original2['Kernel_Name']]
+            df_original2['Kernel_Name']=[s.replace(' ','_') for s in df_original2['Kernel_Name']]
+            df_original2 = df_original2.groupby(['Kernel_Name']).agg(func='mean')
+            df_dict_input[total_file_count] = df_original2.groupby(['Kernel_Name']).agg(func='mean')
+            df_dict_input[total_file_count] = df_dict_input[total_file_count].reset_index()
+
+            total_file_count += 1
+
+        # for ind in range(len(workloads)):
+        #     file_name_list = workloads[ind]
+        #     for fname in file_name_list:
+        #         if not os.path.exists(fname):
+        #             print(fname, ' does not exist....')
+        #             continue
+        #         else:
+        #             # print(total_file_count, fname)
+        #             df_original2 = pd.read_csv(fname)
+
+        #             ######### New Formulas here ######################
+        #             df_original2['VALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_VALU']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
+        #             df_original2['GPU_Activity'] = (df_original2['GRBM_GUI_ACTIVE'] / df_original2['GRBM_COUNT']) * 100
+        #             df_original2['GPU_Occupancy'] = df_original2['SQ_ACCUM_PREV_HIRES'] / df_original2['GRBM_GUI_ACTIVE']
+        #             df_original2['SALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_SCA']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
+        #             df_original2['VALU_threads_per_wave_avg'] = df_original2['SQ_THREAD_CYCLES_VALU']/df_original2['SQ_ACTIVE_INST_VALU']
+        #             df_original2['MFMA_Util'] = (100 * df_original2['SQ_VALU_MFMA_BUSY_CYCLES'])/(df_original2['GRBM_GUI_ACTIVE'] * 104)
+
+
+        #             print(df_original2['Kernel_Name'])
+        #             df_original2['Kernel_Name']=[s.replace(',','_') for s in df_original2['Kernel_Name']]
+        #             df_original2['Kernel_Name']=[s.replace(' ','_') for s in df_original2['Kernel_Name']]
+        #             df_original2 = df_original2.groupby(['Kernel_Name']).agg(func='mean')
+        #             df_dict_input[total_file_count] = df_original2.groupby(['Kernel_Name']).agg(func='mean')
+        #             df_dict_input[total_file_count] = df_dict_input[total_file_count].reset_index()
+        #             total_file_count += 1
 
                     # print(total_file_count)
 
@@ -490,34 +546,36 @@ class visualize_cli(OmniVisualize_Base):
         print("Done generating dash format")
 
         drvr = driver()
-        print(os.getcwd())
+        # print(os.getcwd())
 
+        print(user_target)
         # file_name = '/home/cup7/omni_inte/omniperf/src/omniperf_visualize/dashing/configs/omni_inte.yml'
         file_name = '/home/mohammad/omni_inte/src/omniperf_visualize/dashing/configs/omni_inte.yml'
         with open(file_name, 'w') as txtfile:
-            s = 'tuning_problem_' + str(user_target) + ':'
-            txtfile.write(s + '\n')
-            # s = '  data: /home/cup7/omni_inte/omniperf/build/temp/output/final_runtime.csv'
-            s = '  data: /home/mohammad/omni_inte/build/temp/output/final_runtime.csv'
-            txtfile.write(s + '\n')
-            s = '  tasks:'
-            txtfile.write(s + '\n')
-            s = '    - modules.resource_score.compute_rsm_task_all_regions'
-            txtfile.write(s + '\n')
-            s = '    - viz.sunburst3.sunburst'
-            txtfile.write(s + '\n')
-            s = '  name:  \'' + user_target +'\''
-            txtfile.write(s + '\n')
-            s = '  target:  \'' + user_target +'\''
-            txtfile.write(s + '\n')
-            if inverse=='false':
-                s = '  compute_target: modules.compute_target.compute_runtime'
+            for target in user_target:
+                s = str(target) + ':'
                 txtfile.write(s + '\n')
-            else:
-                s = '  compute_target: modules.compute_target.compute_inverse_target'
-                txtfile.write(s + '\n')                
-            s = '##############################'
-            txtfile.write(s + '\n')
+                # s = '  data: /home/cup7/omni_inte/omniperf/build/temp/output/final_runtime.csv'
+                s = '  data: /home/mohammad/omni_inte/build/temp/output/final_runtime.csv'
+                txtfile.write(s + '\n')
+                s = '  tasks:'
+                txtfile.write(s + '\n')
+                s = '    - modules.resource_score.compute_rsm_task_all_regions'
+                txtfile.write(s + '\n')
+                s = '    - viz.sunburst3.sunburst'
+                txtfile.write(s + '\n')
+                s = '  name:  \'' + target +'\''
+                txtfile.write(s + '\n')
+                s = '  target:  \'' + target +'\''
+                txtfile.write(s + '\n')
+                if inverse=='false':
+                    s = '  compute_target: modules.compute_target.compute_runtime'
+                    txtfile.write(s + '\n')
+                else:
+                    s = '  compute_target: modules.compute_target.compute_inverse_target'
+                    txtfile.write(s + '\n')                
+                s = '##############################'
+                txtfile.write(s + '\n')
 
             txtfile.write('\n')
 
@@ -525,8 +583,9 @@ class visualize_cli(OmniVisualize_Base):
             txtfile.write(s + '\n')  
             s = '  tasks:'
             txtfile.write(s + '\n')
-            s = '    - tuning_problem_' + str(user_target)
-            txtfile.write(s + '\n')
+            for target in user_target:
+                s = '    - ' + str(target)
+                txtfile.write(s + '\n')
             s = '    - viz.dashboard.dashboard_init'
             txtfile.write(s + '\n')
             
