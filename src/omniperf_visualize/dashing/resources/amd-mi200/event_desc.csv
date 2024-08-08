@@ -56,3 +56,7 @@ l2_subp1_read_sysmem_sector_queries,Number of system memory read requests to sli
 l2_subp1_total_read_sector_queries,Total read requests to slice 1 of L2 cache. This includes requests from L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
 l2_subp1_total_write_sector_queries,Total write requests to slice 1 of L2 cache. This includes requests from L1, Texture cache, system memory. This increments by 1 for each 32-byte access.
 OI_HBM,Operational Intensity (Flops/bytes) of HBM,,
+OI_L1D,Operational Intensity (Flops/bytes) of L1 Data Cache,,
+OI_L2D,Operational Intensity (Flops/bytes) of L2 Data Cache,,
+TCC_EA_WRREQ_64B_sum,Total number of 64Byte Write requests to EA across TCC chanels,,
+TCC_READ_sum,Number of L2 Cache Read requests,,

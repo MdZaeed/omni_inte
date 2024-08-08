@@ -1,5 +1,5 @@
-tuning_problem_runtime:
-  data: /home/cup7/omni_inte/omniperf/build/temp/output/final_runtime.csv
+runtime:
+  data: /home/mohammad/omni_inte/build/temp/output/final_runtime.csv
   tasks:
     - modules.resource_score.compute_rsm_task_all_regions
     - viz.sunburst3.sunburst
@@ -10,7 +10,7 @@ tuning_problem_runtime:
 
 main:
   tasks:
-    - tuning_problem_runtime
+    - runtime
     - viz.dashboard.dashboard_init
   arch: amd-mi200
   data_rescale: true

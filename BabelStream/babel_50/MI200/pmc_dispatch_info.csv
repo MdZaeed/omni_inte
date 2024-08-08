@@ -1,0 +1,252 @@
+Dispatch_ID,Kernel_Name,GPU_ID
+0,"void init_kernel<double>(double*, double*, double*, double, double, double) [clone .kd]",2
+1,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+2,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+3,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+4,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+5,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+6,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+7,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+8,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+9,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+10,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+11,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+12,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+13,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+14,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+15,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+16,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+17,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+18,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+19,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+20,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+21,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+22,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+23,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+24,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+25,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+26,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+27,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+28,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+29,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+30,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+31,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+32,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+33,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+34,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+35,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+36,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+37,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+38,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+39,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+40,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+41,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+42,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+43,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+44,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+45,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+46,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+47,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+48,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+49,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+50,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+51,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+52,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+53,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+54,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+55,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+56,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+57,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+58,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+59,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+60,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+61,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+62,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+63,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+64,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+65,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+66,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+67,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+68,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+69,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+70,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+71,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+72,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+73,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+74,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+75,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+76,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+77,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+78,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+79,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+80,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+81,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+82,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+83,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+84,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+85,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+86,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+87,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+88,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+89,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+90,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+91,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+92,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+93,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+94,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+95,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+96,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+97,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+98,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+99,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+100,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+101,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+102,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+103,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+104,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+105,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+106,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+107,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+108,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+109,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+110,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+111,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+112,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+113,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+114,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+115,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+116,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+117,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+118,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+119,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+120,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+121,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+122,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+123,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+124,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+125,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+126,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+127,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+128,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+129,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+130,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+131,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+132,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+133,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+134,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+135,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+136,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+137,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+138,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+139,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+140,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+141,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+142,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+143,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+144,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+145,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+146,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+147,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+148,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+149,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+150,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+151,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+152,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+153,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+154,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+155,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+156,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+157,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+158,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+159,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+160,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+161,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+162,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+163,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+164,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+165,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+166,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+167,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+168,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+169,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+170,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+171,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+172,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+173,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+174,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+175,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+176,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+177,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+178,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+179,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+180,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+181,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+182,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+183,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+184,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+185,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+186,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+187,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+188,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+189,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+190,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+191,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+192,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+193,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+194,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+195,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+196,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+197,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+198,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+199,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+200,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+201,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+202,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+203,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+204,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+205,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+206,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+207,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+208,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+209,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+210,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+211,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+212,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+213,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+214,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+215,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+216,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+217,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+218,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+219,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+220,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+221,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+222,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+223,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+224,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+225,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+226,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+227,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+228,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+229,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+230,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+231,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+232,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+233,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+234,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+235,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+236,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+237,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+238,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+239,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+240,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+241,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+242,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+243,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+244,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+245,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2
+246,"void copy_kernel<double>(double const*, double*) [clone .kd]",2
+247,"void mul_kernel<double>(double*, double const*) [clone .kd]",2
+248,"void add_kernel<double>(double const*, double const*, double*) [clone .kd]",2
+249,"void triad_kernel<double>(double*, double const*, double const*) [clone .kd]",2
+250,"void dot_kernel<double>(double const*, double const*, double*, int) [clone .kd]",2

@@ -102,7 +102,9 @@ class driver(dict):
 
         #'arch_group_file', 'event_map_file', 'exclude_file', 'counters_file'])
         arch_name = self.load_from_config(config_dict, 'arch', 'haswell')
-        temp_prefix = '/home/cup7/omni_inte/omniperf/src/omniperf_visualize/dashing/'
+        # temp_prefix = '/home/cup7/omni_inte/omniperf/src/omniperf_visualize/dashing/'
+        temp_prefix = '/home/mohammad/omni_inte/src/omniperf_visualize/dashing/'
+
         arch_path = os.path.join(temp_prefix, 'resources', arch_name, 'architecture_groups.txt')
         event_path = os.path.join(temp_prefix, 'resources', arch_name, 'event_map.txt')
         exclude_path = os.path.join(temp_prefix, 'resources', arch_name, 'exclude_groups.txt')

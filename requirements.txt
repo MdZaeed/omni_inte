@@ -13,3 +13,10 @@ dash-bootstrap-components
 kaleido
 setuptools
 plotille
+numpy
+h5py
+psutil
+scipy
+pandas
+plotly
+requests

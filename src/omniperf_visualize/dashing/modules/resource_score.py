@@ -5,7 +5,8 @@ import os
 import numpy as np
 from scipy.optimize import nnls
 from scipy.linalg import lstsq
-from numpy import NaN, inf
+# from numpy import NaN, inf
+from numpy import nan, inf
 import psutil
 import importlib
 import pandas as pd
@@ -210,7 +211,8 @@ def compute_rsm(data_loader, region, num_iters=2500, use_nn_solver=False,
         # If this group has no events associated with it
         # We mark it's error as nan
         if len(ids) == 0:
-            errors[i] = NaN
+            # errors[i] = NaN
+            errors[i] = nan
         else:
             # Belief propagation
             errors[i] = np.linalg.norm(
@@ -270,7 +272,8 @@ def compute_rsm_with_data(data_loader, app_data, eff_loss, num_iters=5000, use_n
         # If this group has no events associated with it
         # We mark it's error as nan
         if len(ids) == 0:
-            errors[i] = NaN
+            errors[i] = nan
+            # errors[i] = NaN
         else:
             # Belief propagation
             errors[i] = np.linalg.norm(

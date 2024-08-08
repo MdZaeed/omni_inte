@@ -277,16 +277,17 @@ class visualize_cli(OmniVisualize_Base):
         filter_list_plus = filter_list[:]
         filter_list_plus.append('Kernel_Name')
 
-        temp_folder_path = '/home/mohammad/omni_inte/build/temp'
-        for filename in os.listdir(temp_folder_path):
-            file_path = os.path.join(temp_folder_path, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-            except Exception as e:
-                print('Failed to delete %s. Reason: %s' % (file_path, e))
+        temp_folder_paths = ['/home/mohammad/omni_inte/build/temp','/home/mohammad/omni_inte/build/temp_2']
+        for temp_folder_path in temp_folder_paths:
+            for filename in os.listdir(temp_folder_path):
+                file_path = os.path.join(temp_folder_path, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print('Failed to delete %s. Reason: %s' % (file_path, e))
 
         # return
 
@@ -362,12 +363,13 @@ class visualize_cli(OmniVisualize_Base):
             new_df['OI_LDS'] = np.where(new_df['LDS_bytes'] == 0, 0, new_df['total_flops'] / new_df['LDS_bytes'])
             new_df['OI_L1D'] = np.where(new_df['L1D_bytes'] == 0 , 0, new_df['total_flops'] / new_df['L1D_bytes'])
             new_df['OI_L2D'] = np.where(new_df['L2D_bytes'] == 0 , 0, new_df['total_flops'] / new_df['L2D_bytes'])
-            # # new_df['curr_ai'] = new_df['total_flops'] / new_df['HBM_bytes']
+            
+            # new_df['curr_ai'] = new_df['total_flops'] / new_df['HBM_bytes']
             # new_df['kernel_opsec'] = new_df['total_flops'] / new_df['runtime']
 
             # new_df['peak_valu_flops'] = peak_valu_flops
             # # new_df['intensity'] = new_df['curr_ai'] * new_df['HBM_bytes']
-            # # new_df['attainable_kernel_opsec'] = new_df[['peak_valu_flops','intensity']].values.min(axis=1)
+            # new_df['attainable_kernel_opsec'] = new_df[['peak_valu_flops','OI_HBM']].values.min(axis=1)
             # # new_df['attainable_kernel_opsec'] = min(new_df['curr_ai'] * new_df['HBM_bytes'], peak_valu_flops)
             # # new_df['HBM_BW'] = new_df['kernel_opsec'] / new_df['attainable_kernel_opsec']
             # self.calculate_bw(new_df, 'HBM_bytes', 'HBM_BW')

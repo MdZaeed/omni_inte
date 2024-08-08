@@ -6,7 +6,8 @@ import os
 import numpy as np
 from scipy.optimize import nnls
 from scipy.linalg import lstsq
-from numpy import NaN, inf
+# from numpy import NaN, inf
+from numpy import nan, inf
 import psutil
 from sklearn.preprocessing import MinMaxScaler
 
