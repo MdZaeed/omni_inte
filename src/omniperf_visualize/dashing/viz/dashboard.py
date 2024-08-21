@@ -10,6 +10,10 @@ import time
 import plotly.io as pio
 from plotly.graph_objects import Figure
 import plotly.graph_objects as go
+from omniperf_visualize.visualize_cli import visualize_cli
+from omniperf_visualize.visualize_base import OmniVisualize_Base
+from omniperf_visualize.dashing_setup import dashing_setup
+from dash.exceptions import PreventUpdate
 
 def dashboard_init(data_loaders, global_options):
 	webpages = {}
@@ -21,16 +25,22 @@ def dashboard_init(data_loaders, global_options):
 	
 	port = global_options['port'] if 'port' in global_options else 7050 
 
+	print(global_options['rerun'])
 	if len(webpages.keys()) > 0:
 		start_server(webpages, port)
 
 # creates a div element that represents a whole webpage
 # containing all visualizations for an app
 def create_page(data_loader):
-
+	print('Zayed Data loaded')
+	# print(data_loader.get_events())
 	charts = data_loader["charts"]
 	title = data_loader.get_option('title', 'untitled chart')
 	chart_elems = list(html.H1(children=title))
+	options = ['Select a target metrics']
+	options.extend(data_loader.get_events())
+	print(options)
+	chart_elems.append(html.Div([dcc.Dropdown(options, 'Select a target metrics', id='metric-dropdown')]))
 	instructions = ['This tool provides Dashing\'s important analysis for the tuning parameters of the tuning problem.',
 	html.Br(),
 	html.B('What is Importance analysis?'),
@@ -53,9 +63,10 @@ def create_page(data_loader):
 	# chart_elems.append(html.Div(html.P(instructions)))
 	for chart in charts:
 		chart_elems.append(html.Div([
-			html.Div(dcc.Graph(id=str(chart), figure=chart), style={'width': '59%', 'display': 'inline-block'}),
+			html.Div([
+			html.Div(dcc.Graph(id='chart', figure=chart), style={'width': '59%', 'display': 'inline-block'}),
 			html.Div(html.P(instructions), style={'width': '40%', 'display': 'inline-block', 'float': 'right'})
-		]))
+		])]))
 
 		# chart_elems.append(html.Div(dcc.Graph(id=str(chart), figure=chart, style={float:'left'})))
 		# chart_elems.append(html.Div(html.P(instructions),style={float:'right'}))
@@ -76,8 +87,9 @@ def create_page(data_loader):
 def start_server(webpages, port):
 
 	external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-	index_app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+	index_app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
 
+	# vis_cli = visualize_cli()
 	# nav bar
 	nav_divs = []
 	for page in webpages:
@@ -103,15 +115,26 @@ def start_server(webpages, port):
 		else:
 			return
 
-
+	@index_app.callback(dash.dependencies.Output('chart', 'figure'),
+				dash.dependencies.Input('metric-dropdown', 'value'))
+	def update_output(value):
+		if value == 'Select a target metrics' or value == '':
+			raise PreventUpdate
+		dashing_set = dashing_setup()
+		# print('Running')
+		# print(value)
+		data_l = dashing_set.run_visualize('/home/mohammad/omni_inte/BabelStream',[value], str(port + 1) , 'False')
+		raise PreventUpdate
+		for _, data_loader in data_l.items():
+			charts = data_loader["charts"]
+			for chart in charts:
+				return chart	
 
 	app_thread = threading.Thread(target=index_app.run_server,
-		kwargs={'debug':True, 'port':port, 'use_reloader':False})
+		kwargs={'debug':False, 'port':port, 'use_reloader':False})
 	#index_app.run_server(debug=True, port=port, use_reloader=False)
 	app_thread.start()
 	webbrowser.open(f'http://127.0.0.1:{port}')
-
-
 
 
 #shelved
