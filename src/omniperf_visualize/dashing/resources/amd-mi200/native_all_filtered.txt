@@ -1673,4 +1673,5 @@ L2D_bytes
 HBM_bytes
 total_flops
 Unnamed: 0.1
-
+Scaling
+1-MFMA_Util

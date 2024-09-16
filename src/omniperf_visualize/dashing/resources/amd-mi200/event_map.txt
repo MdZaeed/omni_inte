@@ -13,6 +13,7 @@ CPF_=>CPF
 SQC_=>SQC
 TD_=>TD
 SPI_=>SPI
+Scaling=>derived_
 ####
 TA_FLAT_READ_WAVEFRONTS_sum=>TA
 TA_FLAT_WRITE_WAVEFRONTS_sum=>TA

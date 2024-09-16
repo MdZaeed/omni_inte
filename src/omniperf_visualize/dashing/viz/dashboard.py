@@ -14,6 +14,30 @@ from omniperf_visualize.visualize_cli import visualize_cli
 from omniperf_visualize.visualize_base import OmniVisualize_Base
 from omniperf_visualize.dashing_setup import dashing_setup
 from dash.exceptions import PreventUpdate
+from openai import OpenAI
+import os
+import csv
+
+def beautify_text(input_text):
+	lines = input_text.split("\n")
+	components = []
+	for line in lines:
+		print('Zayed new line')
+		print(line)
+		if line.startswith("### "): 
+			components.append(html.H3(line[4:], style={"margin-top": "20px"}))
+		elif line.startswith("1. "):
+			components.append(html.Ol([
+                html.Li(line[3:])
+            ], style={"line-height": "1.6", "margin-left": "20px"}))
+		elif line.startswith("- "):
+			components[-1].children.append(html.Li(line[2:]))
+		elif line.startswith('Optimization '):
+			components.append(html.H2(line))
+		else:
+			components.append(html.P(line))
+            
+	return components
 
 def dashboard_init(data_loaders, global_options):
 	webpages = {}
@@ -25,7 +49,7 @@ def dashboard_init(data_loaders, global_options):
 	
 	port = global_options['port'] if 'port' in global_options else 7050 
 
-	print(global_options['rerun'])
+	# print(global_options['rerun'])
 	if len(webpages.keys()) > 0:
 		start_server(webpages, port)
 
@@ -39,7 +63,7 @@ def create_page(data_loader):
 	chart_elems = list(html.H1(children=title))
 	options = ['Select a target metrics']
 	options.extend(data_loader.get_events())
-	print(options)
+	# print(options)
 	chart_elems.append(html.Div([dcc.Dropdown(options, 'Select a target metrics', id='metric-dropdown')]))
 	instructions = ['This tool provides Dashing\'s important analysis for the tuning parameters of the tuning problem.',
 	html.Br(),
@@ -68,19 +92,68 @@ def create_page(data_loader):
 			html.Div(html.P(instructions), style={'width': '40%', 'display': 'inline-block', 'float': 'right'})
 		])]))
 
-		# chart_elems.append(html.Div(dcc.Graph(id=str(chart), figure=chart, style={float:'left'})))
-		# chart_elems.append(html.Div(html.P(instructions),style={float:'right'}))
+	rsm_ev_errors = data_loader['rsm_ev_errors']
+	rsm_alphas = data_loader['rsm_alphas']
+	rsm_norm_data = data_loader['rsm_norm_data']
+	rsm_results = data_loader['rsm_results']
 
+	# print('rsm_ev_errors')
+	# print(rsm_ev_errors)
+	# print('rsm_alphas')
+	# print(rsm_alphas)
+	# print('rsm_norm_data')
+	# print(rsm_norm_data)
+	# print('rsm_results')
+	# print(rsm_results)
 
-		# chart.write_html("/home/mohammad/gptune-data/" + str(charts.index(chart)) + '.html')
-		# chart.write_json("/home/mohammad/gptune-data/" + str(charts.index(chart)) + '.json')
-		# chart2 = {}
-		# with open('/home/mohammad/gptune-data/0.json', 'r') as f:
-		# 	chart2 = go.Figure(pio.from_json(f.read()))
-		# 	print("Zayed")
-		# 	print(type(chart2))
-		# plot = py(chart2,output_type="Figure")
-		# chart_elems.append(html.Div(dcc.Graph(id=str(chart2), figure=chart2)))
+	regions = data_loader.get_regions()
+	for event, ev_err in rsm_ev_errors.items():
+		# print(event)
+		x = rsm_ev_errors[event]
+		sort_x = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
+		# print(sort_x)
+
+	descriptions = {}
+	if os.path.exists(data_loader['desc_path']):
+		with open(data_loader['desc_path'], 'r') as f:
+			reader = csv.reader(f)
+			descriptions = {}
+			for rows in reader:
+				val = ""
+				key = rows[0]
+				for r in range(1, len(rows)):
+					val += rows[r]
+				descriptions[key] = val
+	
+	# print(descriptions)
+
+	for key in sort_x.keys():
+		if key.find('OI_')!=-1:
+			continue
+		else:
+			imp_ev = key
+			break
+	# imp_ev = list(sort_x.keys())[0]
+	imp_ev_desc = descriptions[imp_ev]
+	print('Zayed dottttttt')
+	print(imp_ev,imp_ev_desc)
+
+	query = 'How do you optimize ' + imp_ev_desc + ' amd gpu? '
+	stream = client.chat.completions.create(
+		model="gpt-4o-mini",
+		messages=[{"role": "user", "content": query}],
+		stream=True,
+	)
+
+	print('Zayyeddddd chatgpt reply')
+	reply = 'Optimization insights for ' + event + 'kernel\n:'
+	for chunk in stream:
+		reply += chunk.choices[0].delta.content or ""
+		# print(chunk.choices[0].delta.content or "", end="\n")
+		# print('Zayed newline')
+
+	chart_elems.append(html.Div(html.P(beautify_text(reply))))
+
 	return html.Div(children=chart_elems)
 
 
@@ -100,7 +173,7 @@ def start_server(webpages, port):
 	index_divs = [dcc.Location(id='url', refresh=False)]
 	index_divs.append(nav)
 	index_divs.append(html.Div(id='page-content'))
-	print(index_divs)
+	# print(index_divs)
 	index_app.layout = html.Div(children=index_divs)
 	
 
