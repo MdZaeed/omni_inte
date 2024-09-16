@@ -211,7 +211,7 @@ class dashing_setup():
             
         return common_feature_list, common_region_list
 
-    def run_visualize(self,parent_folder_path,user_target,port,inverse,rerun=False):
+    def run_visualize(self,parent_folder_path,user_target,port,inverse,filter_str = ''):
         """Run importance analysis visualization."""
         print('First run of visualize Zaeed')
 
@@ -366,6 +366,8 @@ class dashing_setup():
             df_original2['SALU_Util'] = 100 * (df_original2['SQ_ACTIVE_INST_SCA']/(df_original2['GRBM_GUI_ACTIVE'] * 104))
             df_original2['VALU_threads_per_wave_avg'] = df_original2['SQ_THREAD_CYCLES_VALU']/df_original2['SQ_ACTIVE_INST_VALU']
             df_original2['MFMA_Util'] = (100 * df_original2['SQ_VALU_MFMA_BUSY_CYCLES'])/(df_original2['GRBM_GUI_ACTIVE'] * 104)
+            df_original2['Scaling'] = (1 - df_original2['GPU_Occupancy']) / df_original2['runtime'] 
+            df_original2['1-MFMA_Util'] = 1- df_original2['MFMA_Util']
 
 
             # print(df_original2['Kernel_Name'])
@@ -554,10 +556,10 @@ class dashing_setup():
             s += '  compat_labels: true\n'
             s += '  shorten_event_name: false\n'
             s += '  port: ' + port + '\n'
-            if rerun is False:
-                s += '  rerun: ' + 'False' + '\n'
-            else:
-                s += '  rerun: ' + 'True' + '\n'
+            # if rerun is False:
+            #     s += '  rerun: ' + 'False' + '\n'
+            # else:
+            #     s += '  rerun: ' + 'True' + '\n'
             txtfile.write(s)
 
         # if user_target=='SALU Util':

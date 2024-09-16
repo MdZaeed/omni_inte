@@ -262,10 +262,11 @@ class visualize_cli(OmniVisualize_Base):
         user_target = str(self.get_args().target).split(',')
         port = str(self.get_args().port)
         inverse = str(self.get_args().inverse)
+        filter_str = str(self.get_args().filter)
 
-        print(parent_folder_path,user_target,port,inverse)
+        print(parent_folder_path,user_target,port,inverse, filter_str)
         dashing_set = dashing_setup()
-        dashing_set.run_visualize(parent_folder_path,user_target, port, inverse)
+        dashing_set.run_visualize(parent_folder_path,user_target, port, inverse, filter_str)
 
         # folder_names = [name for name in os.listdir(parent_folder_path) 
         #                 if os.path.isdir(parent_folder_path+'/'+name) and name!='temp']

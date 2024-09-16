@@ -601,3 +601,12 @@ Examples:
         default="False",
         help="\t\tSpecify whether the target has to be inversed",
     )
+
+    visualize_group.add_argument(
+        "-f",
+        "--filter",
+        dest="filter",
+        required=False,
+        default="",
+        help="\t\tSpecify whether the result should be GPU specific",
+    )
