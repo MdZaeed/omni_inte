@@ -92,10 +92,6 @@ def create_page(data_loader):
 			html.Div(html.P(instructions), style={'width': '40%', 'display': 'inline-block', 'float': 'right'})
 		])]))
 
-	# client = OpenAI(
-	# 	api_key='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',
-	# )
-
 	rsm_ev_errors = data_loader['rsm_ev_errors']
 	rsm_alphas = data_loader['rsm_alphas']
 	rsm_norm_data = data_loader['rsm_norm_data']
