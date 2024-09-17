@@ -98,7 +98,6 @@ def create_page(data_loader):
 	# rsm_norm_data = data_loader['rsm_norm_data']
 	# rsm_results = data_loader['rsm_results']
 
-
 	# for event, ev_err in rsm_ev_errors.items():
 	# 	x = rsm_ev_errors[event]
 	# 	sort_x = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
