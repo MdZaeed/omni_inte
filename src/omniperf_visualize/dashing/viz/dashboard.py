@@ -92,67 +92,54 @@ def create_page(data_loader):
 			html.Div(html.P(instructions), style={'width': '40%', 'display': 'inline-block', 'float': 'right'})
 		])]))
 
-	rsm_ev_errors = data_loader['rsm_ev_errors']
-	rsm_alphas = data_loader['rsm_alphas']
-	rsm_norm_data = data_loader['rsm_norm_data']
-	rsm_results = data_loader['rsm_results']
 
-	# print('rsm_ev_errors')
-	# print(rsm_ev_errors)
-	# print('rsm_alphas')
-	# print(rsm_alphas)
-	# print('rsm_norm_data')
-	# print(rsm_norm_data)
-	# print('rsm_results')
-	# print(rsm_results)
+	# rsm_ev_errors = data_loader['rsm_ev_errors']
+	# rsm_alphas = data_loader['rsm_alphas']
+	# rsm_norm_data = data_loader['rsm_norm_data']
+	# rsm_results = data_loader['rsm_results']
 
-	regions = data_loader.get_regions()
-	for event, ev_err in rsm_ev_errors.items():
-		# print(event)
-		x = rsm_ev_errors[event]
-		sort_x = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
-		# print(sort_x)
 
-	descriptions = {}
-	if os.path.exists(data_loader['desc_path']):
-		with open(data_loader['desc_path'], 'r') as f:
-			reader = csv.reader(f)
-			descriptions = {}
-			for rows in reader:
-				val = ""
-				key = rows[0]
-				for r in range(1, len(rows)):
-					val += rows[r]
-				descriptions[key] = val
+	# for event, ev_err in rsm_ev_errors.items():
+	# 	x = rsm_ev_errors[event]
+	# 	sort_x = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
+
+	# descriptions = {}
+	# if os.path.exists(data_loader['desc_path']):
+	# 	with open(data_loader['desc_path'], 'r') as f:
+	# 		reader = csv.reader(f)
+	# 		descriptions = {}
+	# 		for rows in reader:
+	# 			val = ""
+	# 			key = rows[0]
+	# 			for r in range(1, len(rows)):
+	# 				val += rows[r]
+	# 			descriptions[key] = val
 	
-	# print(descriptions)
 
-	for key in sort_x.keys():
-		if key.find('OI_')!=-1:
-			continue
-		else:
-			imp_ev = key
-			break
-	# imp_ev = list(sort_x.keys())[0]
-	imp_ev_desc = descriptions[imp_ev]
-	print('Zayed dottttttt')
-	print(imp_ev,imp_ev_desc)
+	# for key in sort_x.keys():
+	# 	if key.find('OI_')!=-1:
+	# 		continue
+	# 	else:
+	# 		imp_ev = key
+	# 		break
+	# # imp_ev = list(sort_x.keys())[0]
+	# imp_ev_desc = descriptions[imp_ev]
+	# print('Zayed dottttttt')
+	# print(imp_ev,imp_ev_desc)
 
-	query = 'How do you optimize ' + imp_ev_desc + ' amd gpu? '
-	stream = client.chat.completions.create(
-		model="gpt-4o-mini",
-		messages=[{"role": "user", "content": query}],
-		stream=True,
-	)
+	# query = 'How do you optimize ' + imp_ev_desc + ' amd gpu? '
+	# stream = client.chat.completions.create(
+	# 	model="gpt-4o-mini",
+	# 	messages=[{"role": "user", "content": query}],
+	# 	stream=True,
+	# )
 
-	print('Zayyeddddd chatgpt reply')
-	reply = 'Optimization insights for ' + event + 'kernel\n:'
-	for chunk in stream:
-		reply += chunk.choices[0].delta.content or ""
-		# print(chunk.choices[0].delta.content or "", end="\n")
-		# print('Zayed newline')
+	# print('Zayyeddddd chatgpt reply')
+	# reply = 'Optimization insights for ' + event + 'kernel\n:'
+	# for chunk in stream:
+	# 	reply += chunk.choices[0].delta.content or ""
 
-	chart_elems.append(html.Div(html.P(beautify_text(reply))))
+	# chart_elems.append(html.Div(html.P(beautify_text(reply))))
 
 	return html.Div(children=chart_elems)
 
